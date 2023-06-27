@@ -9,81 +9,81 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = hirelink
 build_property.RootNamespace = hirelink
-build_property.ProjectDir = G:\Dotnet\project\
+build_property.ProjectDir = g:\Dotnet\project\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = G:\Dotnet\project
+build_property.MSBuildProjectDirectory = g:\Dotnet\project
 build_property._RazorSourceGeneratorDebug = 
 
-[G:/Dotnet/project/Views/Candidate/Add.cshtml]
+[g:/Dotnet/project/Views/Candidate/Add.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FuZGlkYXRlXEFkZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[G:/Dotnet/project/Views/Candidate/AddFeedback.cshtml]
+[g:/Dotnet/project/Views/Candidate/AddFeedback.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FuZGlkYXRlXEFkZEZlZWRiYWNrLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[G:/Dotnet/project/Views/Candidate/Index.cshtml]
+[g:/Dotnet/project/Views/Candidate/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FuZGlkYXRlXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[G:/Dotnet/project/Views/Error/Error.cshtml]
+[g:/Dotnet/project/Views/Error/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXJyb3JcRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[G:/Dotnet/project/Views/Jobs/Create.cshtml]
+[g:/Dotnet/project/Views/Jobs/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSm9ic1xDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[G:/Dotnet/project/Views/Jobs/Edit.cshtml]
+[g:/Dotnet/project/Views/Jobs/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSm9ic1xFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[G:/Dotnet/project/Views/Jobs/Error.cshtml]
+[g:/Dotnet/project/Views/Jobs/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSm9ic1xFcnJvci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[G:/Dotnet/project/Views/Jobs/Index.cshtml]
+[g:/Dotnet/project/Views/Jobs/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSm9ic1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[G:/Dotnet/project/Views/Jobs/Jobs.cshtml]
+[g:/Dotnet/project/Views/Jobs/Jobs.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSm9ic1xKb2JzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[G:/Dotnet/project/Views/Jobs/Upload.cshtml]
+[g:/Dotnet/project/Views/Jobs/Upload.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSm9ic1xVcGxvYWQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[G:/Dotnet/project/Views/Shared/Error.cshtml]
+[g:/Dotnet/project/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[G:/Dotnet/project/Views/Shared/_Layout.cshtml]
+[g:/Dotnet/project/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[G:/Dotnet/project/Views/Shared/_LayoutLogin.cshtml]
+[g:/Dotnet/project/Views/Shared/_LayoutLogin.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXRMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[G:/Dotnet/project/Views/Shared/_ValidationScriptsPartial.cshtml]
+[g:/Dotnet/project/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[G:/Dotnet/project/Views/Statistics/Index.cshtml]
+[g:/Dotnet/project/Views/Statistics/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RhdGlzdGljc1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[G:/Dotnet/project/Views/User/Login.cshtml]
+[g:/Dotnet/project/Views/User/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[G:/Dotnet/project/Views/_ViewImports.cshtml]
+[g:/Dotnet/project/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[G:/Dotnet/project/Views/_ViewStart.cshtml]
+[g:/Dotnet/project/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
