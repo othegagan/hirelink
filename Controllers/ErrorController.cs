@@ -14,7 +14,7 @@ namespace project.Controllers {
         [Route("Error")]
         public IActionResult Index() {
             // Custom error handling logic
-            return View("Error"); // Assuming you have an Error.cshtml view for displaying the error page
+            return View("Error"); // Assuming  have an Error.cshtml view for displaying the error page
         }
 
         [Route("Error/{statusCode}")]
