@@ -1,0 +1,179 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.input-validation-error {
+    border: 1px solid red;
+}
+.input-validation-error:focus {
+    border: 1px solid red;
+}
+.error {
+    @apply text-xs text-red-600 dark:text-red-400;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,600;1,700;1,800;1,900&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap");
+
+.container {
+    width: 100%;
+}
+
+@media (min-width: 640px) {
+    .container {
+        max-width: 640px;
+    }
+}
+
+@media (min-width: 768px) {
+    .container {
+        max-width: 768px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .container {
+        max-width: 1124px;
+    }
+}
+
+@media (min-width: 1280px) {
+    .container {
+        max-width: 1400px;
+    }
+}
+
+body.modal-open {
+    overflow: hidden;
+  }
+
+
+.form-input {
+    @apply mt-1  w-full rounded-md border  py-2 px-3 shadow-sm focus:border-purple-500 focus:outline-none focus:ring-purple-500 sm:text-sm dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-300 dark:placeholder:text-neutral-600 dark:focus:border-purple-500;
+}
+
+.wide-input {
+    @apply mt-1  w-full rounded-md border-2 shadow-sm focus:border-purple-500 focus:outline-none focus:ring-purple-500 sm:text-sm dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-300 dark:placeholder:text-neutral-600 dark:focus:border-purple-500   items-center justify-center  px-4 py-2 text-sm font-medium text-neutral-900 bg-white  border-neutral-200  md:w-auto   focus:z-10 dark:focus:ring-neutral-700 block  p-2 pl-10;
+}
+
+.form-select {
+    @apply px-2 py-2  text-sm text-neutral-700 placeholder-neutral-500 bg-neutral-100 border border-neutral-300  rounded-md dark:placeholder-neutral-400 dark:focus:placeholder-neutral-600 dark:bg-neutral-700 dark:text-neutral-200 focus:placeholder-neutral-500 focus:bg-white focus:border-purple-300 focus:outline-none  focus:border-[3px] dark:focus:border-purple-500 dark:border-neutral-600;
+}
+
+.label {
+    @apply block text-sm font-medium text-gray-700 dark:text-neutral-200;
+}
+
+.active {
+    @apply text-purple-500 dark:text-purple-500 font-bold border-b-4 border-b-purple-500;
+}
+
+.filter-button{
+    @apply py-1.5 px-3 text-xs inline-flex justify-center items-center gap-2 rounded-lg border  bg-white text-neutral-700 shadow-sm align-middle hover:bg-neutral-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-purple-600 transition-all  dark:bg-neutral-900 dark:hover:bg-neutral-800 dark:border-neutral-700 dark:text-neutral-300 dark:hover:text-white dark:focus:ring-offset-neutral-800;
+}
+
+
+
+
+/*Overrides for Tailwind CSS */
+
+/*Form fields*/
+.dataTables_wrapper select,
+.dataTables_wrapper .dataTables_filter input {
+    @apply mx-4 rounded-md border  py-2 px-3 shadow-sm focus:border-purple-500 focus:outline-none focus:ring-purple-500 sm:text-sm dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-300 dark:placeholder:text-neutral-600 dark:focus:border-purple-500;
+}
+
+#filterTable_filter,
+#filterTable_length {
+    @apply text-sm font-medium dark:text-neutral-100 mb-5;
+}
+
+table.dataTable.stripe tbody tr.odd {
+    @apply dark:bg-neutral-700 rounded-lg;
+}
+
+.hover {
+    @apply hover:bg-neutral-300 hover:dark:bg-neutral-800;
+}
+
+/*Pagination Buttons*/
+.dataTables_wrapper .dataTables_paginate .paginate_button {
+    @apply text-xs font-semibold tracking-wide text-gray-500 uppercase dark:text-gray-400;
+}
+
+/*Pagination Buttons - Current selected */
+.dataTables_wrapper .dataTables_paginate .paginate_button.current {
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+    background-color: #7c3aed;
+    transition-property: background-color, border-color, color, fill, stroke;
+    transition-duration: 150ms;
+    color: #ffffff;
+    border-radius: 0.375rem;
+    border-width: 1px;
+    border-right-width: 0;
+    border-color: #7c3aed;
+}
+
+.dataTables_wrapper .dataTables_info {
+    @apply text-xs font-semibold  text-gray-500  dark:text-gray-400;
+}
+
+/*Pagination Buttons - Hover */
+.dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+    @apply px-3 py-1 hover:bg-purple-500 hover:text-white rounded-md focus:outline-none;
+}
+
+#filerTable tbody tr {
+    border-bottom: #1b1b1b;
+}
+
+/*Add padding to bottom border */
+table.dataTable.no-footer {
+    border-bottom: 0px;
+}
+
+.dataTables_filter {
+    @apply flex flex-col md:flex-row gap-2;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button.current,
+.dataTables_wrapper .dataTables_paginate .paginate_button.current:hover {
+    @apply align-bottom inline-flex items-center justify-center cursor-pointer leading-5 transition-colors duration-150 font-medium focus:outline-none px-3 py-1 rounded-md text-xs text-white bg-purple-600 border border-transparent active:bg-purple-600 hover:bg-purple-700;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button {
+    @apply align-bottom inline-flex items-center justify-center cursor-pointer leading-5 transition-colors duration-150 font-medium focus:outline-none  px-3 py-1 rounded-md text-xs text-gray-600 dark:text-gray-400 border border-transparent active:bg-transparent hover:bg-gray-100  dark:hover:bg-gray-500 dark:hover:text-gray-300 dark:hover:bg-opacity-10;
+}
+
+.dataTables_wrapper .dataTables_paginate {
+    @apply flex flex-row items-center justify-center;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button.disabled,
+.dataTables_wrapper .dataTables_paginate .paginate_button.disabled:hover,
+.dataTables_wrapper .dataTables_paginate .paginate_button.disabled:active {
+    @apply align-bottom inline-flex items-center justify-center cursor-pointer leading-5 transition-colors duration-150 font-medium focus:outline-none p-2 rounded-md text-gray-600 dark:text-gray-400  border border-transparent opacity-50;
+}
+
+/* file upload  */
+#FileUpload.active {
+    /* When files dragged over */
+    /* @apply shadow-outline-blue border-blue-300; */
+    box-shadow: 0 0 0 3px rgba(180, 180, 180, 0.45);
+    border-color: #242424;
+    background-color: #bebebebe;
+    color: #1b1b1b;
+}
+
+/* Move candidate button text */
+.muted-option {
+    @apply inline-flex items-center w-full px-2 py-1 text-sm font-semibold transition-transform duration-300 ease-in-out rounded-md cursor-default text-emerald-500;
+}
+
+.active-option {
+    @apply inline-flex items-center w-full px-2 py-1 text-sm font-medium transition-transform duration-300 ease-in-out rounded-md cursor-pointer hover:text-neutral-800 hover:font-semibold dark:hover:text-amber-400 hover:translate-x-2;
+}

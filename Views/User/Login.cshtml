@@ -1,0 +1,126 @@
+﻿@model hirelink.Models.User
+@{
+ViewData["Title"] = "Login";
+Layout = "~/Views/Shared/_LayoutLogin.cshtml";
+
+var errorMessage = TempData["errorMessage"]?.ToString();
+}
+
+
+
+
+
+<section class="flex flex-col items-center h-screen md:flex-row">
+
+    <div class="hidden w-full h-screen bg-indigo-600 lg:block md:w-1/2 xl:w-2/3">
+        <img src="~/images/bg.jpeg" alt="" class="object-cover w-full h-full">
+    </div>
+
+    <div class="bg-[#171717] w-full md:max-w-md lg:max-w-full  md:mx-0 md:w-1/2 xl:w-1/3 h-screen px-6 lg:px-16 xl:px-12
+        flex items-center justify-center">
+
+        <div class="w-full h-100">
+
+            <h1 class="mt-12 text-4xl  font-bold leading-tight md:text-2xl text-neutral-200">Hirelink | Log in </h1>
+            <br />
+            <br />
+
+    @if(errorMessage != null){
+            <div  class=" justify-center align-middle   bg-red-200   rounded-md p-4  my-4 ,"
+                role="alert">
+                <div class="flex justify-center align-middle">
+                    <svg class="h-4 w-4 text-red-600 mt-0.5" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                        fill="currentColor" viewBox="0 0 16 16">
+                        <path
+                            d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z" />
+                    </svg>
+                    <p class="ml-4 text-sm font-medium text-center text-red-600">
+                        Invalid login credentials..! Try again.
+                    </p>
+                </div>
+            </div>
+    }
+
+            <form class="mt-6" action="#" method="POST">
+                <div>
+                    <label asp-for="Username" class="block text-neutral-400"></label>
+                    <input type="text" asp-for="Username"
+                        class="form-input text-base"
+                        placeholder="Enter username" autofocus required />
+                </div>
+
+                <div class="mt-4">
+                    <label asp-for="Password" class="block text-neutral-400"></label>
+                    <input asp-for="Password" type="password" id="Password" name="Password" required="required"
+                        class="form-input text-base"
+                        placeholder="***********">
+                </div>
+
+                <button type="submit" class="w-full block bg-[#9333EA] hover:bg-[#9333EA] focus:bg-[#9333EA] text-white font-semibold rounded-md
+              px-4 py-3 mt-6 leading-wide">Log in</button>
+
+
+
+            </form>
+            <div class="pt-5 text-xs text-center text-gray-400">
+                <span>
+                    Copyright © 2023
+                    <a href="javascript:void();" class="text-green hover:text-green-500 ">Hirelink</a>
+                </span>
+            </div>
+
+
+        </div>
+    </div>
+
+</section>
+
+
+<!--<div class="z-10 flex self-center justify-center">
+    <div class="p-12 mx-auto bg-white rounded-2xl w-96 ">
+        <div class="mb-4">
+            <h3 class="text-2xl font-semibold text-gray-800 ">Sign In </h3>
+            <p class="text-gray-500 ">Please sign in to your account.</p>
+        </div>-->
+<!-- alert -->
+<!--<div id="Invalid_alert" runat="server" class=" justify-center align-middle hidden  bg-red-200   rounded-md p-4  my-4 ,"
+             role="alert">
+            <div class="flex justify-center align-middle">
+                <svg class="h-4 w-4 text-red-600 mt-0.5" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                     fill="currentColor" viewBox="0 0 16 16">
+                    <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z" />
+                </svg>
+                <p class="ml-4 text-sm font-medium text-center text-red-600">
+                    Invalid login credentials..! Try again.
+                </p>
+            </div>
+        </div>
+
+        <div class="space-y-5">
+            <div class="space-y-2">
+                <label class="text-sm font-medium tracking-wide text-gray-700 dark:text-neutral-200">Email</label>
+                <input type="text" id="Username" runat="server"
+                       class="block w-full rounded-[4px] h-[35px] border-0 py-1 mt-2 text-neutral-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-300 focus:ring-1 focus:ring-inset focus:ring-purple-600 dark:focus:border-purple-600 sm:text-sm sm:leading-6 dark:bg-neutral-700 dark:border-none  dark:placeholder:text-gray-300 dark:ring-0" name="Username" placeholder="name@domain.com" required />
+            </div>
+            <div class="space-y-2">
+                <label class="mb-5 text-sm font-medium tracking-wide text-gray-700 dark:text-neutral-200">
+                    Password
+                </label>
+                <input type="password" id="Password" name="Password" runat="server" required="required"
+                       class="block w-full rounded-[4px] h-[35px] border-0 py-1 mt-2 text-neutral-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-300 focus:ring-1 focus:ring-inset focus:ring-purple-600 dark:focus:border-purple-600 sm:text-sm sm:leading-6 dark:bg-neutral-700 dark:border-none  dark:placeholder:text-gray-300 dark:ring-0"
+                       placeholder="***********">
+            </div>
+
+            <div>
+                <asp:Button ID="SignIn" class="w-full mt-6 primary-button text-lg tracking-wide h-[50px] shadow-lg transition ease-in duration-500" runat="server" Text="Sign In" OnClick="SignIn_Click" />
+
+            </div>
+        </div>
+        <div class="pt-5 text-xs text-center text-gray-400">
+            <span>
+                Copyright © 2021-2022
+                <a href="javascript:void();" class="text-green hover:text-green-500 ">Hirelink</a>
+            </span>
+        </div>
+    </div>
+</div>-->

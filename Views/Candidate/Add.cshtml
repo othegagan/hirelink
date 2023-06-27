@@ -1,0 +1,143 @@
+﻿@model hirelink.Models.Candidate
+@{
+    var jobID = ViewContext.RouteData.Values["jobID"]?.ToString();
+ViewData["Title"] = "Add Candidate";
+}
+
+<div class="container px-6 lg:px-32">
+    <div class="lg:grid lg:grid-cols-12 lg:gap-x-5 my-2 lg:mt-10">
+        <aside class="py-6 px-2 sm:px-6 lg:col-span-3 lg:py-0 lg:px-0">
+            <div>
+                <h3 class="text-lg font-medium leading-6 text-gray-900 dark:text-neutral-200">Add candidate</h3>
+                <p class="mt-1 text-sm text-gray-500">What's the job you're hiring for ?</p>
+            </div>
+        </aside>
+        <form asp-action="Add" method="POST" class="lg:col-span-9 ">
+            <div
+                class="shadow sm:overflow-hidden sm:rounded-md bg-white dark:bg-neutral-800 rounded-lg focus:outline-none">
+                <div class="space-y-6  py-6 px-4 sm:p-6">
+                    <div class="grid grid-cols-6 gap-6">
+                        <div asp-validation-summary="ModelOnly" class="text-red-500 text-sm font-normal"></div>
+
+                        <input asp-for="JobID" value="@jobID" autocomplete="off" class="">
+
+                        <div class="col-span-6 sm:col-span-3">
+                            <label asp-for="Name" class="label inline-block"></label>
+                            <input asp-for="Name" autocomplete="off" placeholder="Enter candidate name"
+                                class="form-input">
+                            <span asp-validation-for="Name" class="text-red-500 text-sm font-normal"></span>
+                        </div>
+
+                        <div class="col-span-6 sm:col-span-3">
+                            <label asp-for="Email" class="label"></label>
+                            <input asp-for="Email" class="form-input" placeholder="Enter  Email" />
+                            <span asp-validation-for="Email" class="text-red-500 text-sm font-normal"></span>
+                        </div>
+
+                        <div class="col-span-6 sm:col-span-3">
+                            <label asp-for="Phone" class="label"></label>
+                            <input asp-for="Phone" class="form-input" placeholder="Enter  Phone" />
+                            <span asp-validation-for="Phone" class="text-red-500 text-sm font-normal"></span>
+                        </div>
+
+                        <div class="col-span-6 sm:col-span-3">
+                            <label asp-for="Address" class="label"></label>
+                            <input asp-for="Address" class="form-input" placeholder="Enter  Address" />
+                            <span asp-validation-for="Address" class="text-red-500 text-sm font-normal"></span>
+                        </div>
+
+                        <div class="col-span-6 sm:col-span-3 lg:col-span-2">
+                            <label asp-for="Gender" class="label"></label>
+                            <select asp-for="Gender" class="form-input ">
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                            </select>
+                            <span asp-validation-for="Gender" class="text-red-500 text-sm font-normal"></span>
+                        </div>
+
+                        <div class="col-span-6 sm:col-span-3 lg:col-span-3"></div>
+
+                        <div class="col-span-6 sm:col-span-3 lg:col-span-2">
+                            <label asp-for="Education" class="label"></label>
+                            <input asp-for="Education" class="form-input" placeholder="Enter  Education " />
+                            <span asp-validation-for="Education" class="text-red-500 text-sm font-normal"></span>
+                        </div>
+
+                        <div class="col-span-6 sm:col-span-6 lg:col-span-2">
+                            <label asp-for="InstituteName" class="label"></label>
+                            <input asp-for="InstituteName" class="form-input" placeholder="Enter  Institute Name" />
+                            <span asp-validation-for="InstituteName" class="text-red-500 text-sm font-normal"></span>
+                        </div>
+
+                        <div class="col-span-6 sm:col-span-3 lg:col-span-2">
+                            <label asp-for="PassingYear" class="label"></label>
+                            <input asp-for="PassingYear" class="form-input" placeholder="Enter project name" />
+                            <span asp-validation-for="PassingYear" class="text-red-500 text-sm font-normal"></span>
+                        </div>
+
+                        <div class="col-span-6 sm:col-span-3">
+                            <label asp-for="ResumeFileLink" class="label"></label>
+                            <input asp-for="ResumeFileLink" autocomplete="off" placeholder="Enter resume file link"
+                                class="form-input">
+                            <span asp-validation-for="ResumeFileLink" class="text-red-500 text-sm font-normal"></span>
+                        </div>
+
+                        <div class="col-span-6 sm:col-span-3">
+                            <label asp-for="Skills" class="label"></label>
+                            <input asp-for="Skills" class="form-input" placeholder="Enter Skills " />
+                            <span asp-validation-for="Skills" class="text-red-500 text-sm font-normal"></span>
+                        </div>
+
+
+                        <div class="col-span-6 sm:col-span-3 lg:col-span-2">
+                            <label asp-for="PresentCompany" class="label"></label>
+                            <input asp-for="PresentCompany" class="form-input" placeholder="Enter present company" />
+                            <span asp-validation-for="PresentCompany" class="text-red-500 text-sm font-normal"></span>
+                        </div>
+
+                        <div class="col-span-6 sm:col-span-3 lg:col-span-2">
+                            <label asp-for="Designation" class="label"></label>
+                            <input asp-for="Designation" class="form-input" placeholder="Enter Designation" />
+                            <span asp-validation-for="Designation" class="text-red-500 text-sm font-normal"></span>
+                        </div>
+                        <div class="col-span-6 sm:col-span-3 lg:col-span-2">
+                            <label asp-for="Experience" class="label"></label>
+                            <input asp-for="Experience" class="form-input" placeholder="Enter Experience in years" />
+                            <span asp-validation-for="Experience" class="text-red-500 text-sm font-normal"></span>
+                        </div>
+
+
+                        <div class="col-span-6 sm:col-span-3 lg:col-span-2">
+                            <label asp-for="CurrentCTC" class="label"></label>
+                            <input asp-for="CurrentCTC" class="form-input" placeholder="Enter current CTC" />
+                            <span asp-validation-for="CurrentCTC" class="text-red-500 text-sm font-normal"></span>
+                        </div>
+                        <div class="col-span-6 sm:col-span-3 lg:col-span-2">
+                            <label asp-for="ExpectedCTC" class="label"></label>
+                            <input asp-for="ExpectedCTC" class="form-input" placeholder="Enter expected CTC" />
+                            <span asp-validation-for="ExpectedCTC" class="text-red-500 text-sm font-normal"></span>
+                        </div>
+
+
+
+                    </div>
+                </div>
+                <div class=" px-4 py-3 text-right sm:px-6">
+
+
+                    <a asp-controller="Jobs" asp-action="Index" asp-route-jobId="@jobID"
+                        class="inline-flex justify-center rounded-md border border-transparent bg-neutral-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-neutral-700 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 cursor-pointer">Cancel</a>
+
+                    <input type="submit" value="Save "
+                        class="inline-flex justify-center rounded-md border border-transparent bg-purple-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 cursor-pointer" />
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+@section Scripts {
+@{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

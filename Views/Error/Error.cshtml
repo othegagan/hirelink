@@ -1,0 +1,16 @@
+@{
+ViewData["Title"] = "Error 404";
+}
+
+<main class="container px-6 gap-y-6 grid">
+    <div class="text-center min-h-full mt-20">
+        <p class="text-5xl font-semibold text-purple-600">404</p>
+        <h1 class="mt-4 text-3xl font-bold tracking-tight text-neutral-900-900 sm:text-5xl dark:text-neutral-200">Page not found</h1>
+        <p class="mt-6 text-base leading-7 text-neutral-600">Sorry, we couldn’t find the page you’re looking for.</p>
+        <div class="mt-10 flex items-center justify-center gap-x-6">
+            <a  asp-controller="Jobs" asp-action="Jobs"
+                class= "cursor-pointer rounded-md bg-purple-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-purple-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-purple-600">Go
+                back home</a>
+        </div>
+    </div>
+</main>

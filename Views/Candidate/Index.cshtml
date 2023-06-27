@@ -1,0 +1,767 @@
+﻿@model hirelink.Models.ViewModels.CandidateDetailsViewModel
+@{
+ViewData["Title"] = "Candidate Details";
+var id = ViewContext.RouteData.Values["id"] as string;
+
+var errorMessage = TempData["errorMessage"]?.ToString();
+var successMessage = TempData["successMessage"]?.ToString();
+}
+
+
+
+<!--   -->
+@if(successMessage != null || errorMessage != null){
+<div x-data="{ show:true }" x-show="show" xx-transition:enter="transition ease-in-out duration-300"
+    x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100"
+    x-transition:leave="transition ease-in-out duration-300" x-transition:leave-start="opacity-100"
+    x-transition:leave-end="opacity-0" class="relative z-10">
+
+    <!-- back drop -->
+    <div x-on:click.away="show = false" class="fixed inset-0 bg-stone-600 bg-opacity-75 transition-opacity"></div>
+
+    <div class="fixed inset-0 z-10 overflow-y-auto">
+        <div class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
+            @if(successMessage != null){
+            <div
+                class="relative transform overflow-hidden rounded-lg bg-white dark:bg-neutral-900 px-4 pt-5 pb-4 text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-sm sm:p-6">
+                <div>
+                    <div
+                        class="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-green-500 dark:bg-green-500 text-white">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                            class="w-10 h-10">
+                            <path fill-rule="evenodd"
+                                d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm13.36-1.814a.75.75 0 10-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.14-.094l3.75-5.25z"
+                                clip-rule="evenodd" />
+                        </svg>
+                    </div>
+                    <div class="mt-3 text-center sm:mt-5">
+                        <div class="mt-2">
+                            <p class="text-base text-neutral-700 dark:text-neutral-200">@TempData["successMessage"]</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-5 sm:mt-6">
+                    <button type="button" x-on:click="open = false"
+                        class="inline-flex w-full justify-center rounded-md border border-transparent bg-emerald-500 px-4 py-2 text-base font-medium text-neutral-800 shadow-sm hover:bg-emerald-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2 sm:text-sm">OK..!</button>
+                </div>
+            </div>
+            }else
+
+            if(errorMessage != null){
+            <div
+                class="relative transform overflow-hidden rounded-lg bg-white dark:bg-neutral-900 px-4 pt-5 pb-4 text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-sm sm:p-6">
+                <div>
+                    <div
+                        class="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-rose-100 dark:bg-rose-500 text-red-200 ">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                            class="w-10 h-10">
+                            <path fill-rule="evenodd"
+                                d="M9.401 3.003c1.155-2 4.043-2 5.197 0l7.355 12.748c1.154 2-.29 4.5-2.599 4.5H4.645c-2.309 0-3.752-2.5-2.598-4.5L9.4 3.003zM12 8.25a.75.75 0 01.75.75v3.75a.75.75 0 01-1.5 0V9a.75.75 0 01.75-.75zm0 8.25a.75.75 0 100-1.5.75.75 0 000 1.5z"
+                                clip-rule="evenodd" />
+                        </svg>
+                    </div>
+                    <div class="mt-3 text-center sm:mt-5">
+                        <div class="mt-2">
+                            <p class="text-base text-neutral-700 dark:text-neutral-200">@TempData["errorMessage"]</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-5 sm:mt-6">
+                    <button type="button" x-on:click="open = false"
+                        class="inline-flex w-full justify-center rounded-md border border-transparent bg-rose-500 px-4 py-2 text-base font-medium text-red-100 shadow-sm hover:bg-rose-700 focus:outline-none focus:ring-2 focus:ring-rose-500 focus:ring-offset-2 sm:text-sm">OK..!</button>
+                </div>
+            </div>
+            }
+        </div>
+    </div>
+</div>
+}
+
+
+
+
+<div class="container px-4 sm:px-6">
+    <div class="overflow-hidden">
+
+        <div class="bg-white dark:text-neutral-200  dark:bg-neutral-800 shadow sm:rounded-lg col-span-full  mt-8  ">
+
+            <div class="grid grid-cols-1    px-4 py-4   md:flex md:items-center md:justify-between  ">
+
+                <div class="flex lg:flex-col-reverse flex-col  ">
+
+                    <a asp-Controller="Jobs" asp-action="Index" asp-route-jobID="@Model.Candidate.JobID"
+                        class="text-teal-500 block mb-4 lg:mt-6 lg:mb-0">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                            class="h-5 w-5  inline-block scale-150" viewBox="0 0 32 32" stroke-width="1.5">
+                            <path
+                                d="M12,9.059V6.5c0-0.256-0.098-0.512-0.293-0.708C11.512,5.597,11.256,5.5,11,5.5s-0.512,0.097-0.707,0.292L4,12l6.293,6.207  C10.488,18.402,10.744,18.5,11,18.5s0.512-0.098,0.707-0.293S12,17.755,12,17.5v-2.489c2.75,0.068,5.755,0.566,8,3.989v-1  C20,13.367,16.5,9.557,12,9.059z" />
+                        </svg> <span>Back </span>
+                    </a>
+
+                    <div class=" flex items-center space-x-5 ">
+                        <div class="flex-shrink-0">
+                            <div class="relative">
+                                <span id="candidateName"
+                                    class="flex items-center justify-center px-3 w-16 h-16 text-3xl font-bold text-center capitalize rounded-lg bg-emerald-100 dark:bg-emerald-600 text-emerald-500 dark:text-emerald-100">
+                                    @Model.Candidate.Name
+                                </span>
+                                <span class="absolute inset-0 rounded-lg shadow-inner" aria-hidden="true"></span>
+                                <span id="candidateId" class="hidden">@id</span>
+                                <span id="userName" class="hidden">@User.Identity.Name</span>
+                            </div>
+                        </div>
+                        <div>
+                            <h1 class="text-2xl font-bold text-neutral-800 dark:text-neutral-200"> @Model.Candidate.Name
+                            </h1>
+                            <p class="text-sm font-medium text-neutral-500  mt-1">@Model.Candidate.Email
+                                <span class="font-medium text-neutral-500 mx-2 dark:text-neutral-200">&middot;</span>
+                                @Model.Candidate.Phone
+                            </p>
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <div class="flex flex-col space-y-2  items-start mt-5 md:mt-0 md:ml-5 ">
+                    <h2 class="text-base font-semibold text-neutral-800 dark:text-neutral-200">Current Stage :
+                        <span class="text-purple-500  dark:text-purple-500">@Model.Candidate.Progress</span>
+                    </h2>
+                    @if (Model.Candidate.Status != "" && Model.Candidate.Status != null) {
+                    <p class="text-neutral-700 dark:text-neutral-200 font-medium text-sm ">
+
+                        Interview @Model.Candidate.Status
+                    </p>
+                    }
+                    @if (Model.Candidate.Details != "" && Model.Candidate.Details != null) {
+                    <p class="text-neutral-600 dark:text-neutral-400 font-normal text-sm ">
+
+                        Meeting details : @Model.Candidate.Details
+                    </p>
+                    }
+
+                    @if(Model.Candidate.Progress == "Hired" || Model.Candidate.Progress == "Rejected"){
+                    if( @Model.Candidate.Comments != null){
+                    <p>Comments : @Model.Candidate.Comments</p>
+                    }
+                    }
+
+                    <!-- hire and reject etc buttons-->
+                    @if(Model.Candidate.Progress != "Hired" && Model.Candidate.Progress != "Rejected"){
+                    <div class=" flex flex-wrap gap-4 sm:flex-row mt-2">
+                        @if(Model.Candidate.Progress == "AVP Round"){
+                        <button type="button" onclick="openDialog('hireDialog')"
+                            class="py-2 px-3 inline-flex justify-center items-center gap-2 rounded-md bg-green-100   font-medium text-green-500  hover:bg-green-300   focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 transition-all text-sm dark:focus:ring-offset-green-800">
+                            <svg class="w-4 h-4 mr-1 " fill="currentColor" aria-hidden="true" viewBox="0 0 22 22">
+                                <path
+                                    d="M11.329 19.6c-.185.252-.47.385-.759.385-.194 0-.389-.06-.558-.183-.419-.309-.509-.896-.202-1.315l1.077-1.456c.308-.417.896-.508 1.315-.199.421.306.511.895.201 1.313l-1.074 1.455zm-.825-2.839c.308-.418.217-1.007-.201-1.316-.421-.308-1.008-.216-1.317.203l-1.073 1.449c-.309.419-.217 1.009.202 1.317.417.307 1.007.218 1.315-.202l1.074-1.451zm-1.9-1.388c.309-.417.217-1.007-.203-1.315-.418-.307-1.007-.216-1.314.202l-1.083 1.461c-.308.419-.209.995.209 1.304.421.308 1 .229 1.308-.19l1.083-1.462zm-1.898-1.386c.308-.419.219-1.007-.203-1.315-.419-.309-1.007-.218-1.315.201l-1.075 1.451c-.308.418-.217 1.008.202 1.315.419.307 1.008.218 1.315-.202l1.076-1.45zm17.294-8.438s-1.555.301-2.667.479c-2.146.344-4.144-.416-6.361-1.562-.445-.229-.957-.466-1.458-.466-.461 0-.913.209-1.292.639-1.366 1.547-2.16 2.915-3.785 3.864-.801.468.14 1.934 1.86 1.331.878-.308 1.736-.895 2.706-1.677.762-.615 1.22-.524 1.879.135 1.238 1.238 5.404 5.351 5.404 5.351 1.317-.812 2.422-1.312 3.713-1.792v-6.302zm-10.524 12.662c-.158.459-.618 1.001-.953 1.455.297.235.608.334.882.334.717 0 1.188-.671.542-1.318l-.471-.471zm6.506-3.463c-1.07-1.055-4.732-4.667-5.803-5.713-.165-.161-.421-.18-.608-.044-.639.464-2.082 1.485-2.944 1.788-1.685.59-3.115-.222-3.422-1.359-.192-.712.093-1.411.727-1.781 1.008-.589 1.657-1.375 2.456-2.363-.695-.539-1.35-.732-1.991-.732-1.706 0-3.317 1.366-5.336 1.231-1.373-.09-3.061-.403-3.061-.403v6.333c1.476.321 2.455.464 3.92 1.199l.462-.624c.364-.496.949-.792 1.564-.792.87 0 1.622.578 1.861 1.388.951 0 1.667.602 1.898 1.387.826-.031 1.641.519 1.897 1.385 1.171 0 2.017.92 1.981 2.007l1.168 1.168c.367.368.963.367 1.331 0 .368-.368.368-.964 0-1.332l-1.686-1.687c-.22-.22.113-.553.333-.333l2.032 2.033c.368.368.963.368 1.331 0s.368-.963 0-1.331l-2.501-2.502c-.221-.218.113-.553.333-.333l2.7 2.701c.368.368.963.368 1.331 0 .358-.356.361-.922.027-1.291z">
+                                </path>
+                            </svg> Hire
+                        </button>
+                        }
+
+                        <button type="button" onclick="openDialog('rejectDialog')"
+                            class="py-2 px-3 inline-flex justify-center items-center gap-2 rounded-md bg-rose-100   font-medium text-rose-500  hover:bg-rose-300   focus:outline-none focus:ring-2 focus:ring-rose-500 focus:ring-offset-2 transition-all text-sm dark:focus:ring-offset-rose-800">
+                            <svg class="w-4 h-4 mr-1 " fill="currentColor" aria-hidden="true" viewBox="0 0 22 22">
+                                <path
+                                    d="M15.73 5.25h1.035A7.465 7.465 0 0118 9.375a7.465 7.465 0 01-1.235 4.125h-.148c-.806 0-1.534.446-2.031 1.08a9.04 9.04 0 01-2.861 2.4c-.723.384-1.35.956-1.653 1.715a4.498 4.498 0 00-.322 1.672V21a.75.75 0 01-.75.75 2.25 2.25 0 01-2.25-2.25c0-1.152.26-2.243.723-3.218C7.74 15.724 7.366 15 6.748 15H3.622c-1.026 0-1.945-.694-2.054-1.715A12.134 12.134 0 011.5 12c0-2.848.992-5.464 2.649-7.521.388-.482.987-.729 1.605-.729H9.77a4.5 4.5 0 011.423.23l3.114 1.04a4.5 4.5 0 001.423.23zM21.669 13.773c.536-1.362.831-2.845.831-4.398 0-1.22-.182-2.398-.52-3.507-.26-.85-1.084-1.368-1.973-1.368H19.1c-.445 0-.72.498-.523.898.591 1.2.924 2.55.924 3.977a8.959 8.959 0 01-1.302 4.666c-.245.403.028.959.5.959h1.053c.832 0 1.612-.453 1.918-1.227z">
+                                </path>
+                            </svg>
+                            <span>Reject</span>
+                        </button>
+
+                        @if(Model.Candidate.Status != "Completed" && Model.Candidate.Progress != "Applied"){
+
+                        <button type="button" onclick="openDialog('scheduleDialog')"
+                            class="py-2 px-4 inline-flex justify-center items-center gap-2 rounded-md border border-transparent font-semibold bg-purple-500 text-white hover:bg-purple-600 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 transition-all text-sm dark:focus:ring-offset-neutral-800">
+                            Sechdule Interview
+                        </button>
+                        }
+
+                        <!-- Move Candidate -->
+                        <div class="relative">
+                            <button x-on:click="toggleDropdown" x-on:keydown.window="closeDropdown"
+                                class="py-2 px-4 inline-flex justify-center items-center gap-2 rounded-md border border-transparent font-semibold bg-amber-500 text-white hover:bg-amber-600 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:ring-offset-2 transition-all text-sm dark:focus:ring-offset-neutral-800"
+                                aria-haspopup="true" aria-expanded="false">
+                                Move Candidate
+                                <svg class="w-5 h-5 ml-2 -mr-1 " id="arrow" viewBox="0 0 20 20" fill="currentColor"
+                                    aria-hidden="true">
+                                    <path fill-rule="evenodd" d="M10 12l-5-5 1.41-1.41L10 9.17l3.59-3.58L15 7l-5 5z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                            </button>
+                            <template x-if="isDropdownOpen">
+                                <div class="absolute sm:right-0 left-0  z-50 mt-2 w-40 origin-top-right rounded-md bg-neutral-50  dark:bg-neutral-700  shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
+                                    role="menu" tabindex="-1" x-transition:leave-start="opacity-100"
+                                    x-transition:leave-end="opacity-0" x-on:click="closeDropdown"
+                                    x-on:click.away="closeDropdown" x-on:keydown.window="closeDropdown">
+                                    <ul class="absolute right-0 z-50 p-2 mt-2 bg-white border rounded-lg shadow-md w-44 text-neutral-600 border-neutral-100 min-w-max-content dark:text-neutral-300 dark:border-neutral-700 dark:bg-neutral-800"
+                                        aria-label="submenu">
+                                        <p class="mb-2 text-xs cursor-default text-neutral-500 dark:text-neutral-100">Move To:
+                                        </p>
+                                        <li class="mb-2 last:mb-0">
+                                            @if (Model.Candidate.Progress == "Applied") {
+                                            <p class="muted-option">Applied</p>
+                                            } else {
+                                            <form action="/Candidate/UpdateCandidateProgress" method="post">
+                                                <input type="hidden" name="candidateId" value="@id">
+                                                <input type="hidden" name="userName" value="@User.Identity.Name">
+                                                <input type="hidden" name="comments" value="-">
+                                                <input type="hidden" name="progress" value="Applied">
+                                                <button class="active-option" type="submit">Applied</button>
+                                            </form>
+                                            }
+                                        </li>
+                                        <li class="mb-2 last:mb-0">
+                                            @if (Model.Candidate.Progress == "First Round") {
+                                            <p class="muted-option">First Round</p>
+                                            } else {
+                                            <form action="/Candidate/UpdateCandidateProgress" method="post">
+                                                <input type="hidden" name="candidateId" value="@id">
+                                                <input type="hidden" name="userName" value="@User.Identity.Name">
+                                                <input type="hidden" name="comments" value="-">
+                                                <input type="hidden" name="progress" value="First Round">
+                                                <button class="active-option" type="submit">First Round</button>
+                                            </form>
+                                            }
+                                        </li>
+                                        <li class="mb-2 last:mb-0">
+                                            @if (Model.Candidate.Progress == "Second Round") {
+                                            <p class="muted-option">Second Round</p>
+                                            } else {
+                                            <form action="/Candidate/UpdateCandidateProgress" method="post">
+                                                <input type="hidden" name="candidateId" value="@id">
+                                                <input type="hidden" name="userName" value="@User.Identity.Name">
+                                                <input type="hidden" name="comments" value="-">
+                                                <input type="hidden" name="progress" value="Second Round">
+                                                <button class="active-option" type="submit">Second Round</button>
+                                            </form>
+                                            }
+                                        </li>
+                                        <li class="mb-2 last:mb-0">
+                                            @if (Model.Candidate.Progress == "AVP Round") {
+                                            <p class="muted-option">AVP Round</p>
+                                            } else {
+                                            <form action="/Candidate/UpdateCandidateProgress" method="post">
+                                                <input type="hidden" name="candidateId" value="@id">
+                                                <input type="hidden" name="userName" value="@User.Identity.Name">
+                                                <input type="hidden" name="comments" value="-">
+                                                <input type="hidden" name="progress" value="AVP Round">
+                                                <button class="active-option" type="submit">AVP Round</button>
+                                            </form>
+                                            }
+                                        </li>
+                                    </ul>
+
+                                </div>
+                            </template>
+
+                        </div>
+
+
+                    </div>
+                    }
+                </div>
+            </div>
+
+            <!-- candidate deatails -->
+            <div class="border-t border-neutral-200 px-4 py-5 sm:px-6">
+                <div class="grid grid-cols-1 gap-x-4 gap-y-8 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-12">
+                    <div class="sm:col-span-1 md:col-span-1 lg:col-span-3">
+                        <dt class="text-sm font-medium text-neutral-500">Email address</dt>
+                        <dd class="mt-1 text-sm text-neutral-900 dark:text-neutral-300">@Model.Candidate.Email</dd>
+                    </div>
+                    <div class="sm:col-span-1 md:col-span-1 lg:col-span-3">
+                        <dt class="text-sm font-medium text-neutral-500">Phone</dt>
+                        <dd class="mt-1 text-sm text-neutral-900 dark:text-neutral-300">@Model.Candidate.Phone</dd>
+                    </div>
+                    <div class="sm:col-span-1 md:col-span-1 lg:col-span-3">
+                        <dt class="text-sm font-medium text-neutral-500">Location</dt>
+                        <dd class="mt-1 text-sm text-neutral-900 dark:text-neutral-300">@Model.Candidate.Address</dd>
+                    </div>
+                    <div class="sm:col-span-1 md:col-span-1 lg:col-span-3">
+                        <dt class="text-sm font-medium text-neutral-500">Resume</dt>
+                        <dd class="mt-1 text-sm text-neutral-900 dark:text-neutral-300">
+                            <li class="flex items-center justify-between py-3 pl-3 pr-4 text-sm">
+                                <div class="flex w-0 flex-1 items-center">
+                                    <!-- Heroicon name: mini/paper-clip -->
+                                    <svg class="h-5 w-5 flex-shrink-0 text-neutral-400" xmlns="http://www.w3.org/2000/svg"
+                                        viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                        <path fill-rule="evenodd"
+                                            d="M15.621 4.379a3 3 0 00-4.242 0l-7 7a3 3 0 004.241 4.243h.001l.497-.5a.75.75 0 011.064 1.057l-.498.501-.002.002a4.5 4.5 0 01-6.364-6.364l7-7a4.5 4.5 0 016.368 6.36l-3.455 3.553A2.625 2.625 0 119.52 9.52l3.45-3.451a.75.75 0 111.061 1.06l-3.45 3.451a1.125 1.125 0 001.587 1.595l3.454-3.553a3 3 0 000-4.242z"
+                                            clip-rule="evenodd" />
+                                    </svg>
+                                    <span class="ml-2 w-0 flex-1 truncate">resume_@Model.Candidate.Name</span>
+                                </div>
+                                <div class="ml-4 flex-shrink-0 border-b border-teal-500 ">
+                                    <a href="@Model.Candidate.ResumeFileLink" target="_blank"
+                                        class="font-medium text-teal-600   hover:text-teal-500">Download</a>
+                                </div>
+                            </li>
+                        </dd>
+                    </div>
+                    <div class="sm:col-span-1 md:col-span-1 lg:col-span-3">
+                        <dt class="text-sm font-medium text-neutral-500">Gender</dt>
+                        <dd class="mt-1 text-sm text-neutral-900 dark:text-neutral-300">@Model.Candidate.Gender</dd>
+                    </div>
+                    <div class="sm:col-span-1 md:col-span-1 lg:col-span-3">
+                        <dt class="text-sm font-medium text-neutral-500">Education</dt>
+                        <dd class="mt-1 text-sm text-neutral-900 dark:text-neutral-300">@Model.Candidate.Education</dd>
+                    </div>
+                    <div class="sm:col-span-1 md:col-span-1 lg:col-span-3">
+                        <dt class="text-sm font-medium text-neutral-500">Institute Name</dt>
+                        <dd class="mt-1 text-sm text-neutral-900 dark:text-neutral-300">@Model.Candidate.InstituteName
+                        </dd>
+                    </div>
+                    <div class="sm:col-span-1 md:col-span-1 lg:col-span-3">
+                        <dt class="text-sm font-medium text-neutral-500">Passing Year</dt>
+                        <dd class="mt-1 text-sm text-neutral-900 dark:text-neutral-300">@Model.Candidate.PassingYear</dd>
+                    </div>
+                    <div class="sm:col-span-1 md:col-span-1 lg:col-span-3">
+                        <dt class="text-sm font-medium text-neutral-500">Designation</dt>
+                        <dd class="mt-1 text-sm text-neutral-900 dark:text-neutral-300">@Model.Candidate.Designation</dd>
+                    </div>
+                    <div class="sm:col-span-1 md:col-span-1 lg:col-span-3">
+                        <dt class="text-sm font-medium text-neutral-500">Present Company</dt>
+                        <dd class="mt-1 text-sm text-neutral-900 dark:text-neutral-300">@Model.Candidate.PresentCompany
+                        </dd>
+                    </div>
+                    <div class="sm:col-span-1 md:col-span-1 lg:col-span-2">
+                        <dt class="text-sm font-medium text-neutral-500">Experience</dt>
+                        <dd class="mt-1 text-sm text-neutral-900 dark:text-neutral-300">@Model.Candidate.Experience years
+                        </dd>
+                    </div>
+                    <div class="sm:col-span-1 md:col-span-1 lg:col-span-2">
+                        <dt class="text-sm font-medium text-neutral-500">Current CTC</dt>
+                        <dd id="CurrentCTC" class="mt-1 text-sm text-neutral-900 dark:text-neutral-300">
+                            @Model.Candidate.CurrentCTC LPA</dd>
+                    </div>
+                    <div class="sm:col-span-1 md:col-span-1 lg:col-span-2">
+                        <dt class="text-sm font-medium text-neutral-500">Expected CTC</dt>
+                        <dd id="ExpectedCTC" class="mt-1 text-sm text-neutral-900 dark:text-neutral-300">
+                            @Model.Candidate.ExpectedCTC LPA</dd>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<!-- Interviews and timlines -->
+<div class="container px-4 sm:px-6">
+    <div class="overflow-hidden">
+        <div class=" sm:rounded-lg col-span-full  mt-8  ">
+            <div class="mt-8 grid  grid-cols-1 gap-6  lg:grid-cols-3 ">
+
+                <!-- Interviews ---->
+                <div class=" lg:col-span-2  ">
+                    <section aria-labelledby="notes-title">
+                        <div class="bg-white dark:bg-neutral-800 shadow sm:overflow-hidden sm:rounded-lg min-w-full">
+                            <div class="divide-y divide-neutral-200">
+                                <div class=" flex flex-row justify-between px-4 py-5 sm:px-6">
+                                    <h2 class="text-base font-semibold text-neutral-900 dark:text-neutral-300 tracking-wider">
+                                        Interviews</h2>
+                                    @if(Model.Candidate.Status != "Completed" && Model.Candidate.Progress != "Applied"
+                                    &&
+                                    Model.Candidate.Status != "to be scheduled"){
+                                    <a asp-Controler="Candidate" asp-Action="AddFeedback" asp-route-id="@id"
+                                        class="py-2 px-4 inline-flex justify-center items-center gap-2 rounded-md border border-transparent font-semibold bg-[#7E8233] text-white hover:bg-[#6c6f21] focus:outline-none focus:ring-2 focus:ring-[#7E8233] focus:ring-offset-2 transition-all text-sm dark:focus:ring-offset-neutral-800">
+                                        Interview Now
+                                    </a>
+                                    }else{
+                                    <!-- <p class="tx-xs dark:text-neutral-500"> Interview not sechuled</p> -->
+                                    }
+                                </div>
+                                <!-- feedback -->
+                                <div class="px-4 py-6 sm:px-6">
+                                    <ul role="list" class="space-y-10">
+                                        @if (Model.Feedbacks != null && Model.Feedbacks.Count > 0) {
+                                        @foreach (var feedback in Model.Feedbacks) {
+                                        <li>
+                                            <div
+                                                class="gap-3 grid grid-cols-1 border max-w-full flex-1  border-neutral-200 dark:border-neutral-600 py-3 px-4 rounded-lg ">
+                                                <div class="space-y-1">
+                                                    <div class="text-sm">
+                                                        <h3 class="font-medium text-neutral-900 dark:text-neutral-300">
+                                                            @feedback.Round
+                                                            <span class="font-medium text-neutral-500 ml-2">happened on
+                                                                @feedback.FeedbackDate.ToString("dd MMM yyy | HH:mm")</span>
+                                                        </h3>
+                                                    </div>
+                                                    <div class="text-base">
+                                                        <h3 class="font-medium text-neutral-900 dark:text-neutral-400">
+                                                            Interviewer
+                                                            :
+                                                            <span class="text-lime-700 dark:text-lime-400">
+                                                                @feedback.InterviewerName
+                                                            </span>
+                                                            <span
+                                                                class="font-medium text-neutral-500 mx-2 dark:text-neutral-200">&middot;</span>
+                                                            <span class="text-neutral-900 dark:text-neutral-100"></span>
+                                                            @feedback.InterviewerEmail
+                                                        </h3>
+                                                    </div>
+
+                                                    <div class=" text-sm text-neutral-700">
+                                                        <p class="font-medium text-neutral-500"> Comments :
+                                                            <span class="dark:text-neutral-200">
+                                                                @feedback.Comments
+                                                            </span>
+                                                        </p>
+                                                    </div>
+                                                </div>
+
+                                                <!-- topics -->
+                                                <div class=" flex flex-col md:col-span-6   ">
+                                                    <div
+                                                        class="grid grid-cols-1 sm:grid-cols-2  md:grid-cols-2 border-neutral-300  gap-y-3 ">
+                                                        @if (feedback.Topics != null && feedback.Topics.Count > 0) {
+
+                                                        @foreach (var topic in feedback.Topics) {
+                                                        <p
+                                                            class=" text-sm text-neutral-600 font-medium  dark:text-neutral-300">
+                                                            @topic.TopicName
+                                                        </p>
+                                                        <div
+                                                            class="relative w-full h-4 bg-neutral-200 dark:bg-neutral-600 rounded-md">
+                                                            <div class="bg-amber-500 text-neutral-800   absolute top-0 left-0 flex h-full  items-center justify-center rounded-md text-xs font-semibold "
+                                                                style="width:@(topic.TopicRating * 10)%;">
+                                                                <p class="text-[10px]">@topic.TopicRating out of 10</p>
+                                                            </div>
+
+                                                        </div>
+
+                                                        }
+                                                        }
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+
+                                        }}
+                                        else{
+                                        <div
+                                            class="min-w-0 max-w-fit flex-1 border border-neutral-200 dark:border-neutral-400 py-2 px-3 rounded-lg">
+                                            <div class="text-sm font-medium text-neutral-500">
+                                                No Feedbacks found..!
+                                            </div>
+                                        </div>
+                                        }
+
+
+                                    </ul>
+                                </div>
+                            </div>
+
+                        </div>
+                    </section>
+                </div>
+
+
+                <!-- Timeline Feed -->
+                <section aria-labelledby="timeline" class="lg:col-span-1 min-w-full ">
+                    <div class="bg-white dark:bg-neutral-800  px-4 py-5 sm:px-6  shadow sm:rounded-lg ">
+                        <h2 id="timeline-title"
+                            class="text-base font-semibold text-neutral-900 dark:text-neutral-300 tracking-wider">Timeline
+                        </h2>
+
+                        <div class="flow-root mt-8">
+                            <ul role="list" class="">
+
+                                @if ( Model.TimeLines != null && Model.TimeLines.Any()) {
+
+                                @foreach (var timeline in Model.TimeLines) {
+                                <li>
+                                    <div class="relative pb-8">
+                                        <span
+                                            class="absolute  left-[10px] -ml-px -mt-4 h-32 w-0.5 bg-neutral-300 dark:bg-neutral-600"
+                                            aria-hidden="true"></span>
+                                        <div class="relative flex items-start space-x-3 ">
+                                            <div class="relative px-1">
+                                                <div
+                                                    class="flex h-3 w-3 items-center justify-center rounded-full bg-neutral-300 dark:bg-neutral-400 ring-4 ring-white dark:ring-neutral-800">
+                                                </div>
+                                            </div>
+                                            <div
+                                                class="min-w-0 max-w-fit flex-1 border border-neutral-200 dark:border-neutral-400 py-2 px-3 rounded-lg">
+                                                <div>
+                                                    <div class="text-sm">
+                                                        <p class="font-medium text-neutral-500">
+                                                        @{
+                                                            string activityDate = timeline.ActivityDate?.ToString("dd MMM yyyy | HH:mm") ?? "N/A";
+                                                        }
+                                                            @activityDate
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                                <div class="mt-2 text-sm text-neutral-700 dark:text-neutral-300">
+                                                    @timeline.ActivityPerformed
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                }
+                                }
+                                else{
+                                <div
+                                    class="min-w-0 max-w-fit flex-1 border border-neutral-200 dark:border-neutral-400 py-2 px-3 rounded-lg">
+                                    <div class="text-sm font-medium text-neutral-500">
+                                        No timeline found..!
+                                    </div>
+                                </div>
+                                }
+
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+
+<dialog id="hireDialog" class="relative">
+    <!-- back drop -->
+    <div class="fixed inset-0 bg-stone-600 bg-opacity-75 transition-opacity">
+    </div>
+    <!-- Content -->
+    <div class="fixed inset-0 z-10 overflow-y-auto" x-transition:enter="transition ease-in-out duration-300"
+        x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100"
+        x-transition:leave="transition ease-in-out duration-300" x-transition:leave-start="opacity-100"
+        x-transition:leave-end="opacity-0">
+        <div class="flex min-h-full  items-end justify-center p-4 text-center sm:items-center sm:p-0">
+            <div
+                class=" p-4 sm:p-6 relative bottom-10 transform overflow-hidden rounded-lg bg-white dark:bg-neutral-900 text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg">
+                <div class="absolute top-0 right-0  pt-4 pr-4 block">
+                    <button type="button" x-on:click="active = null; location.reload();"
+                        class="rounded-md  text-neutral-400 hover:text-neutral-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 ">
+                        <span class="sr-only">Close</span>
+                        <!-- Heroicon name: outline/x-mark -->
+                        <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+
+                <form action="UpdateCandidateProgress" method="post">
+                    <input type="number" name="candidateId" value="@id" hidden>
+                    <input type="text" name="userName" value="@User.Identity.Name" hidden>
+                    <input type="text" name="progress" value="Hired" hidden>
+                    <div class="mt-3 text-left">
+                        <h1 class="font-semibold text-lg  text-neutral-900 dark:text-neutral-200">
+                            Are you sure you want to hire this candidate?
+                        </h1>
+                        <div class="mt-4">
+                            <label for="Comments" class="label mb-1 dark:text-neutral-600">Comments
+                                (optional)</label>
+                                <div x-data="{ text: '-' }">
+                                    <textarea x-model="text" name="comments" class="form-input w-full" rows="4"></textarea>
+                                </div>
+                        </div>
+                    </div>
+                    <div class=" flex flex-row justify-end gap-4 mt-6">
+                        <button type="button"
+                            class="py-2 px-4 inline-flex justify-center items-center gap-2 rounded-md border border-transparent font-semibold  text-neutral-500 hover:bg-neutral-300 focus:outline-none focus:ring-2 focus:ring-neutral-500 focus:ring-offset-2 transition-all text-sm dark:focus:ring-offset-neutral-800"
+                            x-on:click="active = null; location.reload();">No</button>
+
+                        <button type="submit"
+                            class="py-2 px-4 inline-flex justify-center items-center gap-2 rounded-md border border-transparent font-semibold bg-purple-500 text-white hover:bg-purple-600 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 transition-all text-sm dark:focus:ring-offset-neutral-800">Yes</button>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</dialog>
+
+<dialog id="rejectDialog" class="relative">
+    <!-- back drop -->
+    <div class="fixed inset-0 bg-stone-600 bg-opacity-75 transition-opacity">
+    </div>
+    <!-- Content -->
+    <div class="fixed inset-0 z-10 overflow-y-auto" x-transition:enter="transition ease-in-out duration-300"
+        x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100"
+        x-transition:leave="transition ease-in-out duration-300" x-transition:leave-start="opacity-100"
+        x-transition:leave-end="opacity-0">
+        <div class="flex min-h-full  items-end justify-center p-4 text-center sm:items-center sm:p-0">
+            <div
+                class=" p-4 sm:p-6 relative bottom-10 transform overflow-hidden rounded-lg bg-white dark:bg-neutral-900 text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg">
+                <div class="absolute top-0 right-0  pt-4 pr-4 block">
+                    <button type="button" x-on:click="active = null; location.reload();"
+                        class="rounded-md  text-neutral-400 hover:text-neutral-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 ">
+                        <span class="sr-only">Close</span>
+                        <!-- Heroicon name: outline/x-mark -->
+                        <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+
+                <form action="UpdateCandidateProgress" method="post">
+                    <input type="number" name="candidateId" value="@id" hidden>
+                    <input type="text" name="userName" value="@User.Identity.Name" hidden>
+                    <input type="text" name="progress" value="Rejected" hidden>
+                    <div class="mt-3 text-left">
+                        <h1 class="font-semibold text-lg  text-neutral-900 dark:text-neutral-200">
+                            Are you sure you want to reject this candidate?
+                        </h1>
+                        <div class="mt-4">
+                            <label for="Comments" class="label mb-1 dark:text-neutral-600">Comments
+                                (optional)</label>
+
+                            <div x-data="{ text: '-' }">
+                                <textarea x-model="text" name="comments" class="form-input w-full" rows="4"></textarea>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class=" flex flex-row justify-end gap-4 mt-6">
+                        <button type="button"
+                            class="py-2 px-4 inline-flex justify-center items-center gap-2 rounded-md border border-transparent font-semibold  text-neutral-500 hover:bg-neutral-300 focus:outline-none focus:ring-2 focus:ring-neutral-500 focus:ring-offset-2 transition-all text-sm dark:focus:ring-offset-neutral-800"
+                            x-on:click="active = null; location.reload();">No</button>
+
+                        <button type="submit"
+                            class="py-2 px-4 inline-flex justify-center items-center gap-2 rounded-md border border-transparent font-semibold bg-purple-500 text-white hover:bg-purple-600 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 transition-all text-sm dark:focus:ring-offset-neutral-800">Yes</button>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</dialog>
+
+<dialog id="scheduleDialog" class="relative">
+    <!-- back drop -->
+    <div class="fixed inset-0 bg-stone-600 bg-opacity-75 transition-opacity">
+    </div>
+    <!-- Content -->
+    <div class="fixed inset-0 z-10 overflow-y-auto" x-transition:enter="transition ease-in-out duration-300"
+        x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100"
+        x-transition:leave="transition ease-in-out duration-300" x-transition:leave-start="opacity-100"
+        x-transition:leave-end="opacity-0">
+        <div class="flex min-h-full  items-end justify-center p-4 text-center sm:items-center sm:p-0">
+            <div
+                class=" p-4 sm:p-6 relative bottom-10 transform overflow-hidden rounded-lg bg-white dark:bg-neutral-900 text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg">
+                <div class="absolute top-0 right-0  pt-4 pr-4 block">
+                    <button type="button" x-on:click=" location.reload();"
+                        class="rounded-md  text-neutral-400 hover:text-neutral-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 ">
+                        <span class="sr-only">Close</span>
+                        <!-- Heroicon name: outline/x-mark -->
+                        <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+
+                <form action="UpdateCandidateStatus" method="post">
+                    <input type="number" name="candidateId" value="@id" hidden>
+                    <input type="text" name="userName" value="@User.Identity.Name" hidden>
+                    <div class="mt-3 text-left">
+                        <h1 class="font-semibold text-lg capitalize text-neutral-900 dark:text-neutral-200">
+                            schedule
+                            Interview
+                        </h1>
+                        <div class="mt-4 md:flex-row flex flex-col w-full items-center">
+                            <label for="meeting" class="label mb-1 md:w-1/2">Interview
+                                timings</label>
+                            <input class="form-input" placeholder="" required="required" name="interview_timings"
+                                type="datetime-local" id="interview_timings" value="">
+                        </div>
+                        <div class="mt-4">
+                            <label for="Details" class="label mb-1">Enter meeting
+                                details</label>
+                            <textarea name="details" required id="details" class="form-input w-full"
+                                rows="4"></textarea>
+                        </div>
+                    </div>
+                    <div class=" flex flex-row justify-end gap-4 mt-6">
+                        <button type="button"
+                            class="py-2 px-4 inline-flex justify-center items-center gap-2 rounded-md border border-transparent font-semibold  text-neutral-500 hover:bg-neutral-300 focus:outline-none focus:ring-2 focus:ring-neutral-500 focus:ring-offset-2 transition-all text-sm dark:focus:ring-offset-neutral-800"
+                            x-on:click="location.reload();">Cancel</button>
+
+                        <button type="submit"
+                            class="py-2 px-4 inline-flex justify-center items-center gap-2 rounded-md border border-transparent font-semibold bg-purple-500 text-white hover:bg-purple-600 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 transition-all text-sm dark:focus:ring-offset-neutral-800">Save</button>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</dialog>
+
+
+
+
+
+
+
+@section Scripts{
+
+
+<script>
+    function openDialog(dialogId) {
+        const dialog = document.getElementById(dialogId);
+        dialog.showModal();
+    }
+
+    function closeDialog(dialogId) {
+        const dialog = document.getElementById(dialogId);
+        dialog.close();
+    }
+</script>
+
+
+
+<script>
+    let candidateName = document.getElementById("candidateName").innerText;
+    document.getElementById("candidateName").innerText = getTwoLettersForName(candidateName)
+
+    let CurrentCTC = document.getElementById("CurrentCTC").innerText;
+    document.getElementById("CurrentCTC").innerText = CurrentCTC.replace(/(\.00)|(\.0+$)/g, '');
+
+    let ExpectedCTC = document.getElementById("ExpectedCTC").innerText;
+    document.getElementById("ExpectedCTC").innerText = ExpectedCTC.replace(/(\.00)|(\.0+$)/g, '');
+
+
+    // Get the datetime input element
+    const startsAtInput = document.getElementById("interview_timings");
+
+    // Set the input step attribute to enforce 1-minute increments
+    startsAtInput.step = "60";
+
+    // Function to format the date and time to a 24-hour format string
+    function formatDateTime(date) {
+        const year = date.getFullYear();
+        const month = (date.getMonth() + 1).toString().padStart(2, "0");
+        const day = date.getDate().toString().padStart(2, "0");
+        const hours = date.getHours().toString().padStart(2, "0");
+        const minutes = date.getMinutes().toString().padStart(2, "0");
+
+        return `${year}-${month}-${day}T${hours}:${minutes}`;
+    }
+
+    // Get the current date and time
+    const currentDate = new Date();
+
+    // Format the current date and time to a 24-hour format string
+    const currentDateTime = formatDateTime(currentDate);
+
+    // Set the value of the datetime input element to the current date and time
+    startsAtInput.value = currentDateTime;
+
+
+// Set the minimum value to the current date and time
+startsAtInput.min = currentDateTime;
+
+</script>
+
+
+}

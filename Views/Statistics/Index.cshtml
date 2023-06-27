@@ -1,0 +1,151 @@
+@model hirelink.Models.Statistics
+@{
+ViewData["Title"] = "Statistics";
+}
+
+
+
+<div class=" container px-6 gap-y-6 grid mt-6">
+    <!-- Grid -->
+    <div class="grid sm:grid-cols-2 md:grid-cols-4 xl:grid-cols-4 gap-4 sm:gap-6">
+        <!-- Card -->
+        <div
+            class="group flex flex-col bg-white border shadow-sm rounded-xl hover:shadow-md  dark:border-0 dark:bg-neutral-800">
+            <div class="p-4 md:p-5">
+                <div class="flex justify-between items-center">
+                    <div>
+                        <p class="text-base text-neutral-500 dark:text-neutral-400">
+                            Candidate Applied
+                        </p>
+                        <h1
+                            class="text-3xl font-semibold text-neutral-600 dark:group-hover:text-neutral-400 dark:text-neutral-200">
+                            @Model.CandidatesCount
+                        </h1>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Card -->
+        <div
+            class="group flex flex-col bg-white border shadow-sm rounded-xl hover:shadow-md  dark:border-0 dark:bg-neutral-800">
+            <div class="p-4 md:p-5">
+                <div class="flex justify-between items-center">
+                    <div>
+                        <p class="text-base text-neutral-500 dark:text-neutral-400">
+                            Candidates in Pipleline
+                        </p>
+                        <h1
+                            class="text-3xl font-semibold text-neutral-600 dark:group-hover:text-neutral-400 dark:text-neutral-200">
+                            @Model.OtherProgressCount
+                        </h1>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Card -->
+        <div
+            class="group flex flex-col bg-white border shadow-sm rounded-xl hover:shadow-md  dark:border-0 dark:bg-neutral-800">
+            <div class="p-4 md:p-5">
+                <div class="flex justify-between items-center">
+                    <div>
+                        <p class="text-base text-neutral-500 dark:text-neutral-400 ">
+                            Candidates Hired
+                        </p>
+                        <h1
+                            class="text-3xl font-semibold text-neutral-600 dark:group-hover:text-neutral-400 dark:text-neutral-200">
+                            @Model.HiredCount
+                        </h1>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Card -->
+        <div
+            class="group flex flex-col bg-white border shadow-sm rounded-xl hover:shadow-md  dark:border-0 dark:bg-neutral-800">
+            <div class="p-4 md:p-5">
+                <div class="flex justify-between items-center">
+                    <div>
+                        <p class="text-base text-neutral-500 dark:text-neutral-400">
+                            Candidates Rejected
+                        </p>
+                        <h1
+                            class="text-3xl font-semibold text-neutral-600 dark:group-hover:text-neutral-400 dark:text-neutral-200">
+                            @Model.RejectedCount
+                        </h1>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Card -->
+        <div
+            class="group flex flex-col bg-white border shadow-sm rounded-xl hover:shadow-md  dark:border-0 dark:bg-neutral-800">
+            <div class="p-4 md:p-5">
+                <div class="flex justify-between items-center">
+                    <div>
+                        <p class="text-base text-neutral-500 dark:text-neutral-400">
+                            Jobs Posted
+                        </p>
+                        <h1
+                            class="text-3xl font-semibold text-neutral-600 dark:group-hover:text-neutral-400 dark:text-neutral-200">
+                            @(Model.OpenJobsCount + Model.ClosedJobsCount)
+                        </h1>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Card -->
+        <div
+            class="group flex flex-col bg-white border shadow-sm rounded-xl hover:shadow-md  dark:border-0 dark:bg-neutral-800">
+            <div class="p-4 md:p-5">
+                <div class="flex justify-between items-center">
+                    <div>
+                        <p class="text-base text-neutral-500 dark:text-neutral-400">
+                            Active Jobs
+                        </p>
+                        <h1
+                            class="text-3xl font-semibold text-neutral-600 dark:group-hover:text-neutral-400 dark:text-neutral-200">
+                            @Model.OpenJobsCount
+                        </h1>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div
+        class="group flex flex-col bg-white border shadow-sm rounded-xl hover:shadow-md  dark:border-0 dark:bg-neutral-800">
+        <div class="p-4 md:p-5">
+            <div class="flex justify-between items-center">
+                <div>
+                    <p class="text-base text-neutral-500 dark:text-neutral-400">
+                        Closed Jobs
+                    </p>
+                    <h1
+                        class="text-3xl font-semibold text-neutral-600 dark:group-hover:text-neutral-400 dark:text-neutral-200">
+                        @Model.ClosedJobsCount
+                    </h1>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    </div>
+    <!-- End Grid -->
+</div>

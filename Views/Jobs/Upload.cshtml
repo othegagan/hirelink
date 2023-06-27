@@ -1,0 +1,175 @@
+﻿@{
+var jobID = ViewContext.RouteData.Values["jobID"]?.ToString();
+
+var errorMessage = TempData["errorMessage"]?.ToString();
+var successMessage = TempData["successMessage"]?.ToString();
+}
+
+
+@if (successMessage != null) {
+<div id="dismiss-alert"
+    class="flex p-4 my-4 min-w-60 text-green-800 rounded-lg bg-green-300 dark:bg-green-500 dark:text-green-800"
+    role="alert">
+    <svg aria-hidden="true" class="flex-shrink-0 w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
+        xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd"
+            d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"
+            clip-rule="evenodd"></path>
+    </svg>
+    <span class="sr-only">Info</span>
+    <div class="mx-3 text-sm font-medium">
+        @TempData["successMessage"]
+    </div>
+    <button type="button"
+        class="ml-auto -mx-1.5 -my-1.5 bg-green-50 text-green-500 rounded-lg focus:ring-2 focus:ring-green-400 p-1.5 hover:bg-green-200 inline-flex h-8 w-8 dark:bg-neutral-800 dark:text-green-400 dark:hover:bg-neutral-700"
+        data-dismiss-target="#alert-3" aria-label="Close">
+        <span class="sr-only">Close</span>
+        <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
+            xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd"
+                d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                clip-rule="evenodd"></path>
+        </svg>
+    </button>
+</div>
+} else if (errorMessage != null) {
+<div id="dismiss-alert"
+    class="flex p-4 my-4 min-w-60 text-red-800 rounded-lg bg-red-300 dark:bg-red-500 dark:text-red-800" role="alert">
+    <svg aria-hidden="true" class="flex-shrink-0 w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
+        xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd"
+            d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"
+            clip-rule="evenodd"></path>
+    </svg>
+    <span class="sr-only">Info</span>
+    <div class="mx-3 text-sm font-medium">
+        @TempData["errorMessage"]
+    </div>
+    <button type="button"
+        class="ml-auto -mx-1.5 -my-1.5 bg-red-50 text-red-500 rounded-lg focus:ring-2 focus:ring-red-400 p-1.5 hover:bg-red-200 inline-flex h-8 w-8 dark:bg-neutral-800 dark:text-red-400 dark:hover:bg-neutral-700"
+        data-dismiss-target="#alert-3" aria-label="Close">
+        <span class="sr-only">Close</span>
+        <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
+            xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd"
+                d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                clip-rule="evenodd"></path>
+        </svg>
+    </button>
+</div>
+}
+
+
+<div class="container px-6 lg:px-32">
+    <div class="flex flex-col gap-x-5 my-2 lg:mt-8">
+        <aside class="py-4 px-2 sm:px-6  lg:py-0 lg:px-0">
+            <div>
+                <div  class="p-4 mb-4 text-purple-800  dark:text-purple-400 "
+                    role="alert">
+                    <div class="flex items-center">
+                        <h3 class="text-2xl font-medium">Upload candidates </h3>
+                    </div>
+                    <div class="mt-2 mb-4 flex flex-row text-base text-neutral-500 ">
+                        <svg aria-hidden="true" class="w-5 h-5 mr-2 inline-block" fill="currentColor"
+                            viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                        <span class="sr-only">Info</span>
+                        <div class="ml-4">
+                            <h3 class=" font-semibold">
+                                Note : You can download the template or sample file for reference.
+                                <button type="button"
+                                    class=" inline-block text-purple-800 bg-transparent border border-purple-800 hover:bg-purple-900 hover:text-white focus:ring-4 focus:outline-none focus:ring-purple-200 font-medium rounded-lg text-xs px-3 py-1.5 text-center dark:hover:bg-purple-600 dark:border-purple-600 dark:text-purple-400 dark:hover:text-white dark:focus:ring-purple-800"
+                                    data-dismiss-target="#alert-additional-content-1" aria-label="Close">
+                                    Download template
+                                </button>
+                            </h3>
+                            <div class="mt-2 ">
+                                <ul class="list-disc text-sm space-y-1 pl-5">
+                                    <li>
+                                        To know what all data fields you can upload, view the sample from here.
+                                    </li>
+                                    <li>
+                                        Always have the names of the data field in the 1st rowvv
+                                    </li>
+                                    <li>
+                                        Name, Email ID and phone number are mandatory fields.
+                                    </li>
+                                    <li>
+                                        The upload process
+                                        automatically
+                                        excludes candidates with any empty feilds.
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </aside>
+        <form asp-action="Upload" method="POST" enctype="multipart/form-data" class="lg:col-span-9 ">
+            <input type="number" name="id" class="hidden" value="@jobID" />
+
+            <div
+                class="shadow sm:overflow-hidden sm:rounded-md bg-white dark:bg-neutral-800 rounded-lg focus:outline-none">
+                <div class="space-y-6  py-6 px-4 sm:p-6 ">
+                    <div x-data="{ files: null }" id="FileUpload"
+                        class="mt-2 flex justify-center rounded-lg border border-dashed border-neutral-900/25 dark:border-neutral-200/25 px-6 py-10 relative ">
+                        <input type="file"
+                            class="absolute cursor-pointer inset-0 z-50 m-0 p-0 w-full h-full outline-none opacity-0"
+                            accept=".xls,.xlsx" name="uploadedExcelFile"
+                            x-on:change="files = $event.target.files; console.log($event.target.files);"
+                            x-on:dragover="$el.classList.add('active')" x-on:dragleave="$el.classList.remove('active')"
+                            x-on:drop="$el.classList.remove('active')">
+                        <template x-if="files !== null">
+                            <div class="flex flex-col space-y-1 items-center justify-center">
+                                <template x-for="(_,index) in Array.from({ length: files.length })">
+                                    <div class="flex flex-row items-center space-x-2">
+                                        <span class="font-medium text-base text-neutral-900 dark:text-neutral-400"
+                                            x-text="files[index].name">Uploading</span>
+                                        <span class="text-sm self-end text-neutral-500 dark:text-neutral-400"
+                                            x-text="filesize(files[index].size)">...</span>
+                                    </div>
+                                </template>
+                            </div>
+                        </template>
+
+                        <template x-if="files === null">
+                            <div class="text-center flex flex-col items-center justify-center">
+                                <svg viewBox="0 0 256 256" class="h-20 w-20 text-neutral-400 dark:text-neutral-600"
+                                    fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <rect fill="currentColor" />
+                                    <path
+                                        d="M200,24H72A16,16,0,0,0,56,40V64H40A16,16,0,0,0,24,80v96a16,16,0,0,0,16,16H56v24a16,16,0,0,0,16,16H200a16,16,0,0,0,16-16V40A16,16,0,0,0,200,24ZM69.2,158.4a8,8,0,0,1-1.6-11.2L82,128,67.6,108.8a8,8,0,1,1,12.8-9.6L92,114.7l11.6-15.5a8,8,0,0,1,12.8,9.6L102,128l14.4,19.2a8,8,0,0,1-1.6,11.2A7.7,7.7,0,0,1,110,160a8,8,0,0,1-6.4-3.2L92,141.3,80.4,156.8A8,8,0,0,1,74,160,7.7,7.7,0,0,1,69.2,158.4ZM128,216H72V192h56Zm0-152H72V40h56Zm72,152H144V192a16,16,0,0,0,16-16v-8h40Zm0-64H160V104h40Zm0-64H160V80a16,16,0,0,0-16-16V40h56Z" />
+                                </svg>
+
+                                <div class="mt-4 flex text-sm dark:text-neutral-300 leading-6 text-neutral-600">
+                                    <label for="file-upload"
+                                        class="relative cursor-pointer rounded-md  font-semibold text-purple-600 focus-within:outline-none focus-within:ring-2 focus-within:ring-purple-600 focus-within:ring-offset-2 hover:text-purple-500">
+                                        <span>Upload a file</span>
+                                    </label>
+                                    <p class="pl-1">or drag and drop</p>
+                                </div>
+                                <p class="text-xs leading-5 text-neutral-600 dark:text-neutral-400">
+                                    XLS, XLSX files only
+                                </p>
+                            </div>
+                        </template>
+                    </div>
+                </div>
+
+
+                <div class=" px-4 py-3 text-right sm:px-6">
+                    <a asp-Controller="Jobs" asp-Action="Index" asp-route-jobID="@jobID"
+                        class="inline-flex justify-center rounded-md border border-transparent bg-neutral-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-neutral-700 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 cursor-pointer">Cancel</a>
+
+                    <input type="submit" value="Upload File"
+                        class="inline-flex justify-center rounded-md border border-transparent bg-purple-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 cursor-pointer" />
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,310 @@
+﻿@model List<Candidate>
+
+    @{
+    ViewData["Title"] = "Candidates";
+    var errorMessage = TempData["errorMessage"]?.ToString();
+    var successMessage = TempData["successMessage"]?.ToString();
+    var jobID = ViewContext.RouteData.Values["jobID"] as string;
+    }
+
+    @if (successMessage != null) {
+    <div id="dismiss-alert"
+        class="flex p-4 my-4 min-w-60 text-green-800 rounded-lg bg-green-300 dark:bg-green-500 dark:text-green-800"
+        role="alert">
+        <svg aria-hidden="true" class="flex-shrink-0 w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
+            xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd"
+                d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"
+                clip-rule="evenodd"></path>
+        </svg>
+        <span class="sr-only">Info</span>
+        <div class="mx-3 text-sm font-medium">
+            @TempData["successMessage"]
+        </div>
+        <button type="button"
+            class="ml-auto -mx-1.5 -my-1.5 bg-green-50 text-green-500 rounded-lg focus:ring-2 focus:ring-green-400 p-1.5 hover:bg-green-200 inline-flex h-8 w-8 dark:bg-neutral-800 dark:text-green-400 dark:hover:bg-neutral-700"
+            data-dismiss-target="#alert-3" aria-label="Close">
+            <span class="sr-only">Close</span>
+            <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd"
+                    d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                    clip-rule="evenodd"></path>
+            </svg>
+        </button>
+    </div>
+    } else if (errorMessage != null) {
+    <div id="dismiss-alert"
+        class="flex p-4 my-4 min-w-60 text-green-800 rounded-lg bg-green-300 dark:bg-green-500 dark:text-green-800"
+        role="alert">
+        <svg aria-hidden="true" class="flex-shrink-0 w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
+            xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd"
+                d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"
+                clip-rule="evenodd"></path>
+        </svg>
+        <span class="sr-only">Info</span>
+        <div class="mx-3 text-sm font-medium">
+            @TempData["errorMessage"]
+        </div>
+        <button type="button"
+            class="ml-auto -mx-1.5 -my-1.5 bg-green-50 text-green-500 rounded-lg focus:ring-2 focus:ring-green-400 p-1.5 hover:bg-green-200 inline-flex h-8 w-8 dark:bg-neutral-800 dark:text-green-400 dark:hover:bg-neutral-700"
+            data-dismiss-target="#alert-3" aria-label="Close">
+            <span class="sr-only">Close</span>
+            <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd"
+                    d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                    clip-rule="evenodd"></path>
+            </svg>
+        </button>
+    </div>
+    }
+
+
+    <!--Container-->
+    <div class="container px-6  grid">
+
+        <!-- import buttons-->
+        <div class="mt-6 bg-white dark:bg-neutral-800 rounded-lg shadow-md focus:outline-none">
+            <div class="flex flex-col items-center justify-between p-4 space-y-3 md:flex-row md:space-y-0 md:space-x-4">
+                <a asp-controler="Jobs" asp-action="Jobs" class="dark:text-teal-500">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="h-5 w-5  inline-block scale-150"
+                        viewBox="0 0 32 32" stroke-width="1.5" class="w-12 h-12">
+                        <path
+                            d="M12,9.059V6.5c0-0.256-0.098-0.512-0.293-0.708C11.512,5.597,11.256,5.5,11,5.5s-0.512,0.097-0.707,0.292L4,12l6.293,6.207  C10.488,18.402,10.744,18.5,11,18.5s0.512-0.098,0.707-0.293S12,17.755,12,17.5v-2.489c2.75,0.068,5.755,0.566,8,3.989v-1  C20,13.367,16.5,9.557,12,9.059z" />
+                    </svg> <span>Back </span>
+                </a>
+
+
+                <div class="mt-2 sm:mt-0 sm:ml-4">
+                    <div class="-m-1 flex gap-1 flex-wrap items-center">
+                        <button type="button" class="filter-button" onclick="filterProgress('')">All &nbsp; <span
+                                id="all"></span>
+                        </button>
+                        <button class="filter-button" onclick="filterProgress('')">All &nbsp; <span id="all"></span>
+                        </button>
+                        <button class="filter-button" onclick="filterProgress('Applied')">Applied &nbsp; <span
+                                id="applied"></span>
+                        </button>
+                        <button class="filter-button " onclick="filterProgress('First Round')">First Round &nbsp; <span
+                                id="first"></span>
+                        </button>
+                        <button class="filter-button" onclick="filterProgress('Second Round')">Second Round &nbsp;<span
+                                id="second"></span></span>
+                        </button>
+                        <button class="filter-button" onclick="filterProgress('AVP Round')">AVP Round <span
+                                id="avp"></span>
+                        </button>
+                        <button class="filter-button" onclick="filterProgress('Hired')">Hired &nbsp;<span
+                                id="hired"></span>
+                        </button>
+                        <button class="filter-button" onclick="filterProgress('Rejected')">Rejected &nbsp;<span
+                                id="rejected"></span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="flex items-center  space-x-3 flex-row md:flex-row  md:w-auto">
+
+                    <a asp-controller="Jobs" asp-action="upload" asp-route-jobId="@jobID"
+                        class="py-2 px-4 inline-flex justify-center items-center gap-2 rounded-md border border-transparent font-semibold bg-amber-500 text-neutral-800 hover:bg-amber-600 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:ring-offset-2 transition-all text-sm dark:focus:ring-offset-neutral-800">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                            class="hidden md:inline-flex h-5 w-5 mr-2" viewBox="0 0 32 32" stroke-width="1.5"
+                            class="w-6 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M21,2H11c-5,0-9,4-9,9v10c0,5,4,9,9,9h10c5,0,9-4,9-9V11C30,6,26,2,21,2z M20.7,15.7C20.5,15.9,20.3,16,20,16  s-0.5-0.1-0.7-0.3L17,13.4V22c0,0.6-0.4,1-1,1s-1-0.4-1-1v-8.6l-2.3,2.3c-0.4,0.4-1,0.4-1.4,0s-0.4-1,0-1.4l4-4  c0.1-0.1,0.2-0.2,0.3-0.2c0.2-0.1,0.5-0.1,0.8,0c0.1,0.1,0.2,0.1,0.3,0.2l4,4C21.1,14.7,21.1,15.3,20.7,15.7z" />
+                        </svg>
+                        <span class="block md:hidden">Import </span>
+                        <span class="hidden md:block">Import Candidates</span>
+                    </a>
+
+                    <a asp-Controller="Candidate" asp-action="Add" asp-route-id="@jobID"
+                        class="py-2 px-4 inline-flex justify-center items-center gap-2 rounded-md border border-transparent font-semibold bg-purple-500 text-neutral-50 hover:bg-purple-600 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 transition-all text-sm dark:focus:ring-offset-neutral-800">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="hidden md:inline-flex h-5 w-5 mr-2"
+                            viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd"
+                                d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-11a1 1 0 10-2 0v2H7a1 1 0 100 2h2v2a1 1 0 102 0v-2h2a1 1 0 100-2h-2V7z"
+                                clip-rule="evenodd" />
+                        </svg>
+                        <span class="block md:hidden">Add </span>
+                        <span class="hidden md:block">Add Candidates</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="w-full mb-8 overflow-hidden rounded-lg shadow-xs my-4 md:my-6">
+            <div class="category-filter">
+                <select id="progress" class="form-select ">
+                    <option value="">Show All</option>
+                    <option value="Applied">Applied</option>
+                    <option value="First Round">First Round</option>
+                    <option value="Second Round">Second Round</option>
+                    <option value="AVP Round">AVP Round</option>
+                    <option value="Hired">Hired</option>
+                    <option value="Rejected">Rejected</option>
+                </select>
+            </div>
+            <div class="w-full overflow-x-auto">
+                <table id="filterTable" class="  shadow-md "
+                    style="width:100%; padding-top: 1em;  padding-bottom: 1em;">
+                    <thead>
+                        <tr
+                            class="text-sm font-semibold tracking-wide text-left text-neutral-500 uppercase border-b dark:border-neutral-700 bg-neutral-50 dark:text-neutral-400 dark:bg-neutral-800 rounded-t-lg">
+                            <th data-priority="1" class="px-4 py-4"
+                                style="padding: 16px; border-top-left-radius: 10px;">Name</th>
+                            <th data-priority="2" class="px-4 py-4" style="padding: 16px;">Email ID</th>
+                            <th data-priority="3" class="px-4 py-4" style="padding: 16px;">Skills</th>
+                            <th data-priority="4" class="px-4 py-4" style="padding: 16px;">Progress</th>
+                        </tr>
+                    </thead>
+                    <tbody class="bg-white divide-y  dark:bg-neutral-800 text-neutral-700 dark:text-neutral-400">
+                        @foreach (var candidate in Model) {
+
+                        <tr onclick="location.href='/Candidate/@candidate.CandidateId';"
+                            data-job-status="@candidate.Progress"
+                            class="text-neutral-700  cursor-pointer  dark:text-neutral-400 dark:bg-neutral-800  border-b border-neutral-500 px-6 py-4 whitespace-nowrap text-sm font-medium  hover:bg-neutral-100 dark:hover:bg-neutral-600 ">
+                            <td class="px-4 py-3">
+                                <div class="flex items-center text-sm">
+                                    <div class="items-center">
+                                        <p class="font-semibold text-base capitalize text-purple-500">@candidate.Name
+                                        </p>
+                                        <p class="text-xs text-neutral-600 dark:text-neutral-400">
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                                fill="currentColor" class="w-4 h-4 inline-block">
+                                                <path fill-rule="evenodd"
+                                                    d="M1.5 4.5a3 3 0 013-3h1.372c.86 0 1.61.586 1.819 1.42l1.105 4.423a1.875 1.875 0 01-.694 1.955l-1.293.97c-.135.101-.164.249-.126.352a11.285 11.285 0 006.697 6.697c.103.038.25.009.352-.126l.97-1.293a1.875 1.875 0 011.955-.694l4.423 1.105c.834.209 1.42.959 1.42 1.82V19.5a3 3 0 01-3 3h-2.25C8.552 22.5 1.5 15.448 1.5 6.75V4.5z"
+                                                    clip-rule="evenodd" />
+                                            </svg>
+                                            @candidate.Phone
+                                        </p>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="px-4 py-3 text-sm">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                                    class="w-4 h-4 inline-block mr-3">
+                                    <path
+                                        d="M1.5 8.67v8.58a3 3 0 003 3h15a3 3 0 003-3V8.67l-8.928 5.493a3 3 0 01-3.144 0L1.5 8.67z" />
+                                    <path
+                                        d="M22.5 6.908V6.75a3 3 0 00-3-3h-15a3 3 0 00-3 3v.158l9.714 5.978a1.5 1.5 0 001.572 0L22.5 6.908z" />
+                                </svg>
+
+
+                                @candidate.Email
+                            </td>
+                            <td class="px-4 py-3 text-sm">
+                                @candidate.Skills
+                            </td>
+                            <td class="px-4 py-3 text-base font-semibold text-purple-500  dark:text-purple-500">
+                                @candidate.Progress
+                                @if(candidate.Status != ""){
+                                <span class="text-neutral-700 dark:text-neutral-200 font-medium text-xs">(@candidate.Status)
+                                </span>
+                                }
+                            </td>
+                        </tr>
+                        }
+
+                    </tbody>
+
+                </table>
+            </div>
+        </div>
+    </div>
+    <!--/container-->
+
+
+
+
+
+
+
+    @section scripts{
+    <!-- jQuery -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
+    <!--Datatables -->
+    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
+    <script>
+
+
+        // Display count details
+        document.getElementById("all").innerHTML = "  - " + document.querySelectorAll('[data-job-status]').length
+        document.getElementById("applied").innerHTML = "  - " + document.querySelectorAll('[data-job-status="Applied"]').length
+        document.getElementById("first").innerHTML = "  - " + document.querySelectorAll('[data-job-status="First Round"]').length
+        document.getElementById("second").innerHTML = "  - " + document.querySelectorAll('[data-job-status="Second Round"]').length
+        document.getElementById("avp").innerHTML = "  - " + document.querySelectorAll('[data-job-status="AVP Round"]').length
+        document.getElementById("hired").innerHTML = "  - " + document.querySelectorAll('[data-job-status="Hired"]').length
+        document.getElementById("rejected").innerHTML = "  - " + document.querySelectorAll('[data-job-status="Rejected"]').length
+
+
+        $("document").ready(function () {
+
+            $("#filterTable").dataTable({
+                "searching": true
+            });
+
+            //Get a reference to the new datatable
+            var table = $('#filterTable').DataTable();
+
+            //Take the category filter drop down and append it to the datatables_filter div.
+            //You can use this same idea to move the filter anywhere withing the datatable that you want.
+            $("#filterTable_filter.dataTables_filter").append($("#progress"));
+            $("#filterTable_filter.dataTables_filter").append($("#filterButtons"));
+
+            //Get the column index for the Category column to be used in the method below ($.fn.dataTable.ext.search.push)
+            //This tells datatables what column to filter on when a user selects a value from the dropdown.
+            //It's important that the text used here (Category) is the same for used in the header of the column to filter
+            var categoryIndex = 3;
+            $("#filterTable th").each(function (i) {
+                if ($($(this)).html() == "Category") {
+                    categoryIndex = i; return false;
+                }
+            });
+
+            //Use the built in datatables API to filter the existing rows by the Category column
+            $.fn.dataTable.ext.search.push(
+                function (settings, data, dataIndex) {
+                    var selectedItem = $('#progress').val()
+                    var category = data[categoryIndex];
+                    if (selectedItem === "" || category.includes(selectedItem)) {
+                        return true;
+                    }
+                    return false;
+                }
+            );
+
+            //Set the change event for the Category Filter dropdown to redraw the datatable each time
+            //a user selects a new filter.
+            $("#progress").change(function (e) {
+                table.draw();
+            });
+
+            table.draw();
+        });
+
+
+
+        function filterProgress(value) {
+            // Set the selected value of the select element
+            document.getElementById('progress').value = value;
+
+            // Trigger the change event manually
+            const event = new Event('change');
+            document.getElementById('progress').dispatchEvent(event);
+        }
+
+        // Event listener for the change event of the select element
+        document.getElementById('progress').addEventListener('change', function () {
+            // Handle the change event here
+            const selectedValue = this.value;
+            console.log('Selected value:', selectedValue);
+        });
+
+
+
+    </script>
+    }

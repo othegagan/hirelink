@@ -1,0 +1,441 @@
+{
+  "Files": [
+    {
+      "Id": "G:\\Dotnet\\project\\wwwroot\\ExcelFilesUploaded\\Book1_20230605111726822.xlsx",
+      "PackagePath": "staticwebassets\\ExcelFilesUploaded\\Book1_20230605111726822.xlsx"
+    },
+    {
+      "Id": "G:\\Dotnet\\project\\wwwroot\\ExcelFilesUploaded\\Book1_20230605111758641.xlsx",
+      "PackagePath": "staticwebassets\\ExcelFilesUploaded\\Book1_20230605111758641.xlsx"
+    },
+    {
+      "Id": "G:\\Dotnet\\project\\wwwroot\\ExcelFilesUploaded\\candidates_20230605122018027.xlsx",
+      "PackagePath": "staticwebassets\\ExcelFilesUploaded\\candidates_20230605122018027.xlsx"
+    },
+    {
+      "Id": "G:\\Dotnet\\project\\wwwroot\\ExcelFilesUploaded\\candidates_20230605122143513.xlsx",
+      "PackagePath": "staticwebassets\\ExcelFilesUploaded\\candidates_20230605122143513.xlsx"
+    },
+    {
+      "Id": "G:\\Dotnet\\project\\wwwroot\\ExcelFilesUploaded\\candidates_20230605122851820.xlsx",
+      "PackagePath": "staticwebassets\\ExcelFilesUploaded\\candidates_20230605122851820.xlsx"
+    },
+    {
+      "Id": "G:\\Dotnet\\project\\wwwroot\\ExcelFilesUploaded\\candidates_20230605122948376.xlsx",
+      "PackagePath": "staticwebassets\\ExcelFilesUploaded\\candidates_20230605122948376.xlsx"
+    },
+    {
+      "Id": "G:\\Dotnet\\project\\wwwroot\\ExcelFilesUploaded\\candidates_20230605123324884.xlsx",
+      "PackagePath": "staticwebassets\\ExcelFilesUploaded\\candidates_20230605123324884.xlsx"
+    },
+    {
+      "Id": "G:\\Dotnet\\project\\wwwroot\\ExcelFilesUploaded\\candidates_20230605123408166.xlsx",
+      "PackagePath": "staticwebassets\\ExcelFilesUploaded\\candidates_20230605123408166.xlsx"
+    },
+    {
+      "Id": "G:\\Dotnet\\project\\wwwroot\\ExcelFilesUploaded\\candidates_20230605123802311.xlsx",
+      "PackagePath": "staticwebassets\\ExcelFilesUploaded\\candidates_20230605123802311.xlsx"
+    },
+    {
+      "Id": "G:\\Dotnet\\project\\wwwroot\\ExcelFilesUploaded\\candidates_20230605123824448.xlsx",
+      "PackagePath": "staticwebassets\\ExcelFilesUploaded\\candidates_20230605123824448.xlsx"
+    },
+    {
+      "Id": "G:\\Dotnet\\project\\wwwroot\\ExcelFilesUploaded\\candidates_20230605124138505.xlsx",
+      "PackagePath": "staticwebassets\\ExcelFilesUploaded\\candidates_20230605124138505.xlsx"
+    },
+    {
+      "Id": "G:\\Dotnet\\project\\wwwroot\\ExcelFilesUploaded\\candidates_20230605124242130.xlsx",
+      "PackagePath": "staticwebassets\\ExcelFilesUploaded\\candidates_20230605124242130.xlsx"
+    },
+    {
+      "Id": "G:\\Dotnet\\project\\wwwroot\\ExcelFilesUploaded\\candidates_20230605124344214.xlsx",
+      "PackagePath": "staticwebassets\\ExcelFilesUploaded\\candidates_20230605124344214.xlsx"
+    },
+    {
+      "Id": "G:\\Dotnet\\project\\wwwroot\\ExcelFilesUploaded\\candidates_20230605124607920.xlsx",
+      "PackagePath": "staticwebassets\\ExcelFilesUploaded\\candidates_20230605124607920.xlsx"
+    },
+    {
+      "Id": "G:\\Dotnet\\project\\wwwroot\\ExcelFilesUploaded\\candidates_20230605124921868.xlsx",
+      "PackagePath": "staticwebassets\\ExcelFilesUploaded\\candidates_20230605124921868.xlsx"
+    },
+    {
+      "Id": "G:\\Dotnet\\project\\wwwroot\\ExcelFilesUploaded\\candidates_20230605125132238.xlsx",
+      "PackagePath": "staticwebassets\\ExcelFilesUploaded\\candidates_20230605125132238.xlsx"
+    },
+    {
+      "Id": "G:\\Dotnet\\project\\wwwroot\\ExcelFilesUploaded\\candidates_20230605125424090.xlsx",
+      "PackagePath": "staticwebassets\\ExcelFilesUploaded\\candidates_20230605125424090.xlsx"
+    },
+    {
+      "Id": "G:\\Dotnet\\project\\wwwroot\\ExcelFilesUploaded\\candidates_20230605125517691.xlsx",
+      "PackagePath": "staticwebassets\\ExcelFilesUploaded\\candidates_20230605125517691.xlsx"
+    },
+    {
+      "Id": "G:\\Dotnet\\project\\wwwroot\\ExcelFilesUploaded\\candidates_20230605125559818.xlsx",
+      "PackagePath": "staticwebassets\\ExcelFilesUploaded\\candidates_20230605125559818.xlsx"
+    },
+    {
+      "Id": "G:\\Dotnet\\project\\wwwroot\\ExcelFilesUploaded\\candidates_20230605125614799.xlsx",
+      "PackagePath": "staticwebassets\\ExcelFilesUploaded\\candidates_20230605125614799.xlsx"
+    },
+    {
+      "Id": "G:\\Dotnet\\project\\wwwroot\\ExcelFilesUploaded\\candidates_20230605125729135.xlsx",
+      "PackagePath": "staticwebassets\\ExcelFilesUploaded\\candidates_20230605125729135.xlsx"
+    },
+    {
+      "Id": "G:\\Dotnet\\project\\wwwroot\\ExcelFilesUploaded\\candidates_20230605125757576.xlsx",
+      "PackagePath": "staticwebassets\\ExcelFilesUploaded\\candidates_20230605125757576.xlsx"
+    },
+    {
+      "Id": "G:\\Dotnet\\project\\wwwroot\\ExcelFilesUploaded\\candidates_20230605130036173.xlsx",
+      "PackagePath": "staticwebassets\\ExcelFilesUploaded\\candidates_20230605130036173.xlsx"
+    },
+    {
+      "Id": "G:\\Dotnet\\project\\wwwroot\\ExcelFilesUploaded\\candidates_20230605130106282.xlsx",
+      "PackagePath": "staticwebassets\\ExcelFilesUploaded\\candidates_20230605130106282.xlsx"
+    },
+    {
+      "Id": "G:\\Dotnet\\project\\wwwroot\\ExcelFilesUploaded\\candidates_20230605130635755.xlsx",
+      "PackagePath": "staticwebassets\\ExcelFilesUploaded\\candidates_20230605130635755.xlsx"
+    },
+    {
+      "Id": "G:\\Dotnet\\project\\wwwroot\\ExcelFilesUploaded\\candidates_20230605130707638.xlsx",
+      "PackagePath": "staticwebassets\\ExcelFilesUploaded\\candidates_20230605130707638.xlsx"
+    },
+    {
+      "Id": "G:\\Dotnet\\project\\wwwroot\\ExcelFilesUploaded\\candidates_20230605130845519.xlsx",
+      "PackagePath": "staticwebassets\\ExcelFilesUploaded\\candidates_20230605130845519.xlsx"
+    },
+    {
+      "Id": "G:\\Dotnet\\project\\wwwroot\\ExcelFilesUploaded\\candidates_20230605130901283.xlsx",
+      "PackagePath": "staticwebassets\\ExcelFilesUploaded\\candidates_20230605130901283.xlsx"
+    },
+    {
+      "Id": "G:\\Dotnet\\project\\wwwroot\\ExcelFilesUploaded\\candidates_20230605131124014.xlsx",
+      "PackagePath": "staticwebassets\\ExcelFilesUploaded\\candidates_20230605131124014.xlsx"
+    },
+    {
+      "Id": "G:\\Dotnet\\project\\wwwroot\\ExcelFilesUploaded\\candidates_20230605131203067.xlsx",
+      "PackagePath": "staticwebassets\\ExcelFilesUploaded\\candidates_20230605131203067.xlsx"
+    },
+    {
+      "Id": "G:\\Dotnet\\project\\wwwroot\\ExcelFilesUploaded\\candidates_20230605151652322.xlsx",
+      "PackagePath": "staticwebassets\\ExcelFilesUploaded\\candidates_20230605151652322.xlsx"
+    },
+    {
+      "Id": "G:\\Dotnet\\project\\wwwroot\\ExcelFilesUploaded\\candidates_20230605151754729.xlsx",
+      "PackagePath": "staticwebassets\\ExcelFilesUploaded\\candidates_20230605151754729.xlsx"
+    },
+    {
+      "Id": "G:\\Dotnet\\project\\wwwroot\\ExcelFilesUploaded\\candidates_20230605181647136.xlsx",
+      "PackagePath": "staticwebassets\\ExcelFilesUploaded\\candidates_20230605181647136.xlsx"
+    },
+    {
+      "Id": "G:\\Dotnet\\project\\wwwroot\\ExcelFilesUploaded\\candidates_20230605181826477.xlsx",
+      "PackagePath": "staticwebassets\\ExcelFilesUploaded\\candidates_20230605181826477.xlsx"
+    },
+    {
+      "Id": "G:\\Dotnet\\project\\wwwroot\\ExcelFilesUploaded\\candidates_20230605192456859.xlsx",
+      "PackagePath": "staticwebassets\\ExcelFilesUploaded\\candidates_20230605192456859.xlsx"
+    },
+    {
+      "Id": "G:\\Dotnet\\project\\wwwroot\\ExcelFilesUploaded\\candidates_20230610185608456.xlsx",
+      "PackagePath": "staticwebassets\\ExcelFilesUploaded\\candidates_20230610185608456.xlsx"
+    },
+    {
+      "Id": "G:\\Dotnet\\project\\wwwroot\\ExcelFilesUploaded\\candidates_20230610185625452.xlsx",
+      "PackagePath": "staticwebassets\\ExcelFilesUploaded\\candidates_20230610185625452.xlsx"
+    },
+    {
+      "Id": "G:\\Dotnet\\project\\wwwroot\\ExcelFilesUploaded\\omnisharp_20230610112230793.json",
+      "PackagePath": "staticwebassets\\ExcelFilesUploaded\\omnisharp_20230610112230793.json"
+    },
+    {
+      "Id": "G:\\Dotnet\\project\\wwwroot\\css\\dataTables.min.css",
+      "PackagePath": "staticwebassets\\css\\dataTables.min.css"
+    },
+    {
+      "Id": "G:\\Dotnet\\project\\wwwroot\\css\\site.css",
+      "PackagePath": "staticwebassets\\css\\site.css"
+    },
+    {
+      "Id": "G:\\Dotnet\\project\\wwwroot\\css\\tailwind.css",
+      "PackagePath": "staticwebassets\\css\\tailwind.css"
+    },
+    {
+      "Id": "G:\\Dotnet\\project\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "G:\\Dotnet\\project\\wwwroot\\favicon.png",
+      "PackagePath": "staticwebassets\\favicon.png"
+    },
+    {
+      "Id": "G:\\Dotnet\\project\\wwwroot\\images\\bg.jpeg",
+      "PackagePath": "staticwebassets\\images\\bg.jpeg"
+    },
+    {
+      "Id": "G:\\Dotnet\\project\\wwwroot\\images\\sort_asc.png",
+      "PackagePath": "staticwebassets\\images\\sort_asc.png"
+    },
+    {
+      "Id": "G:\\Dotnet\\project\\wwwroot\\images\\sort_both.png",
+      "PackagePath": "staticwebassets\\images\\sort_both.png"
+    },
+    {
+      "Id": "G:\\Dotnet\\project\\wwwroot\\images\\sort_desc.png",
+      "PackagePath": "staticwebassets\\images\\sort_desc.png"
+    },
+    {
+      "Id": "G:\\Dotnet\\project\\wwwroot\\js\\site.js",
+      "PackagePath": "staticwebassets\\js\\site.js"
+    },
+    {
+      "Id": "G:\\Dotnet\\project\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "PackagePath": "staticwebassets\\lib\\bootstrap"
+    },
+    {
+      "Id": "G:\\Dotnet\\project\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
+    },
+    {
+      "Id": "G:\\Dotnet\\project\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
+    },
+    {
+      "Id": "G:\\Dotnet\\project\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
+    },
+    {
+      "Id": "G:\\Dotnet\\project\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
+    },
+    {
+      "Id": "G:\\Dotnet\\project\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
+    },
+    {
+      "Id": "G:\\Dotnet\\project\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
+    },
+    {
+      "Id": "G:\\Dotnet\\project\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
+    },
+    {
+      "Id": "G:\\Dotnet\\project\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
+    },
+    {
+      "Id": "G:\\Dotnet\\project\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
+    },
+    {
+      "Id": "G:\\Dotnet\\project\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
+    },
+    {
+      "Id": "G:\\Dotnet\\project\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
+    },
+    {
+      "Id": "G:\\Dotnet\\project\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
+    },
+    {
+      "Id": "G:\\Dotnet\\project\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
+    },
+    {
+      "Id": "G:\\Dotnet\\project\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
+    },
+    {
+      "Id": "G:\\Dotnet\\project\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
+    },
+    {
+      "Id": "G:\\Dotnet\\project\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
+    },
+    {
+      "Id": "G:\\Dotnet\\project\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
+    },
+    {
+      "Id": "G:\\Dotnet\\project\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
+    },
+    {
+      "Id": "G:\\Dotnet\\project\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
+    },
+    {
+      "Id": "G:\\Dotnet\\project\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
+    },
+    {
+      "Id": "G:\\Dotnet\\project\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
+    },
+    {
+      "Id": "G:\\Dotnet\\project\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
+    },
+    {
+      "Id": "G:\\Dotnet\\project\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
+    },
+    {
+      "Id": "G:\\Dotnet\\project\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
+    },
+    {
+      "Id": "G:\\Dotnet\\project\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
+    },
+    {
+      "Id": "G:\\Dotnet\\project\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
+    },
+    {
+      "Id": "G:\\Dotnet\\project\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "G:\\Dotnet\\project\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "G:\\Dotnet\\project\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
+    },
+    {
+      "Id": "G:\\Dotnet\\project\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
+    },
+    {
+      "Id": "G:\\Dotnet\\project\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
+    },
+    {
+      "Id": "G:\\Dotnet\\project\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
+    },
+    {
+      "Id": "G:\\Dotnet\\project\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
+    },
+    {
+      "Id": "G:\\Dotnet\\project\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
+    },
+    {
+      "Id": "G:\\Dotnet\\project\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "G:\\Dotnet\\project\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
+    },
+    {
+      "Id": "G:\\Dotnet\\project\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
+    },
+    {
+      "Id": "G:\\Dotnet\\project\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
+    },
+    {
+      "Id": "G:\\Dotnet\\project\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
+    },
+    {
+      "Id": "G:\\Dotnet\\project\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
+    },
+    {
+      "Id": "G:\\Dotnet\\project\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
+    },
+    {
+      "Id": "G:\\Dotnet\\project\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
+    },
+    {
+      "Id": "G:\\Dotnet\\project\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "G:\\Dotnet\\project\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
+    },
+    {
+      "Id": "G:\\Dotnet\\project\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Id": "G:\\Dotnet\\project\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
+    },
+    {
+      "Id": "G:\\Dotnet\\project\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
+    },
+    {
+      "Id": "G:\\Dotnet\\project\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
+    },
+    {
+      "Id": "G:\\Dotnet\\project\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
+    },
+    {
+      "Id": "G:\\Dotnet\\project\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
+    },
+    {
+      "Id": "G:\\Dotnet\\project\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
+    },
+    {
+      "Id": "G:\\Dotnet\\project\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
+    },
+    {
+      "Id": "G:\\Dotnet\\project\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
+    },
+    {
+      "Id": "G:\\Dotnet\\project\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
+    },
+    {
+      "Id": "G:\\Dotnet\\project\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
+    },
+    {
+      "Id": "G:\\Dotnet\\project\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.build.hirelink.props",
+      "PackagePath": "build\\hirelink.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildMultiTargeting.hirelink.props",
+      "PackagePath": "buildMultiTargeting\\hirelink.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildTransitive.hirelink.props",
+      "PackagePath": "buildTransitive\\hirelink.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.hirelink.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    }
+  ],
+  "ElementsToRemove": []
+}
