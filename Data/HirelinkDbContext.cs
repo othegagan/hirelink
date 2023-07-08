@@ -4,7 +4,7 @@ using hirelink.Models.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Routing.Matching;
 using Microsoft.CodeAnalysis;
-using Microsoft.Data.SqlClient;
+using Microsoft.Data.SqlClient; 
 using Newtonsoft.Json;
 using System.Data;
 using System.Net;
